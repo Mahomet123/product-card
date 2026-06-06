@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  color: #515076;
 }
 .product-wrapper {
   display: flex;
@@ -12,19 +13,16 @@ body {
   font-size: 70px;
   line-height: 78px;
   text-align: center;
-  color: #515076;
   margin: 0;
   margin-bottom: 110px;
 }
 .title-2 {
   font-size: 20px;
-  color: #515076;
 }
 .products-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  color: #515076;
 }
 .label-text {
   display: block;
@@ -32,21 +30,15 @@ body {
   line-height: 24px;
   color: #A5A3B9;
 }
-img {
-  padding: 25px 25px;
-  
-}
+
 .product-card {
   width: 340px;
   height: 560px;
-  border: 1px;
   margin-bottom: 45px;
   margin-right: 45px;
-  /*border-top: 408px;*/
-  /* border-left: 85px; */
   background-color: #F7F7FA;
   box-shadow: 2px 2px 10px 0px;   /*тень карточки*/
-  padding: 25px 25px
+  padding: 25px;
 }
 .component-list {
   padding-left: 15px;
