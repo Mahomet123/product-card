@@ -32,7 +32,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  left: 85px;
 }
 .product-card {
   width: 340px;
