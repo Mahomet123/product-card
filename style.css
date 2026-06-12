@@ -2,10 +2,14 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 13px;
   line-height: 18px;
   color: #515076;
+  background-image: url(images/dandelion_bg.png);
+  background-size: 67%;
+  background-repeat: no-repeat;
+  background-position: 34% 0%;
 }
 .title {    /*Заголовок*/
   font-weight: 400;
@@ -13,6 +17,7 @@ body {
   line-height: 78px;
   text-align: center;
   margin: 0;
+  margin-top: 220px;
   margin-bottom: 110px;
 }
 .product-title {
@@ -21,9 +26,23 @@ body {
 .products-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  gap: 45px;
+  max-width: 1110px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  left: 85px;
+}
+.product-card {
+  width: 340px;
+  min-height: 560px;
+  /* margin-bottom: 45px;
+  margin-right: 45px; */
+  background-color: #F7F7FA;
+  box-shadow: 2px 2px 10px 0px;   /*card shadow / тень карточки*/
+  padding: 25px;
+  cursor: pointer;
 }
 .label-text {
   display: block;
@@ -31,22 +50,12 @@ body {
   line-height: 24px;
   color: #A5A3B9;
 }
-.product-card {
-  width: 340px;
-  min-height: 560px;
-  margin-bottom: 45px;
-  margin-right: 45px;
-  background-color: #F7F7FA;
-  box-shadow: 2px 2px 10px 0px;   /*тень карточки*/
-  padding: 25px;
-  cursor: pointer;
-}
 .component-list {
   padding-left: 15px;
 }
 .price {
   margin-top: 56px;
   font-size: 20px;
-  display: flex ;  /*нужно разобраться чтобы разделить ценуи ценник*/
-  justify-content: space-between; /*расположение элементов по ширине с одинаковыми отступами*/
+  display: flex;
+  justify-content: space-between; /*arrangement of elements by width with equal indents / расположение элементов по ширине с одинаковыми отступами*/
 }
