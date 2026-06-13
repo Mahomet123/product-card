@@ -6,10 +6,8 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #515076;
-  background-image: url(images/dandelion_bg.png);
-  background-size: 39%;
-  background-repeat: no-repeat;
-  background-position: 37% 0%;
+  max-width: 1280px;
+  min-height: 1715px;
 }
 .title {    /*Заголовок*/
   font-weight: 400;
@@ -19,6 +17,17 @@ body {
   margin: 0;
   margin-top: 220px;
   margin-bottom: 110px;
+}
+.background-image {
+  background-image: url(images/dandelion_bg.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 790px;
+  height: 697px;
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 93px;
 }
 .product-title {
   font-size: 20px;
@@ -41,12 +50,61 @@ body {
   padding: 25px;
   cursor: pointer;
 }
+ .product-card:hover {
+  transform: translateY(-8px);    /* сдвигает карточку по оси У */
+  box-shadow: 10px 10px 18px 0px;
+  transition: all 0.5s ease-out;
+ }
 .component-list {
   padding-left: 15px;
 }
 .price {
   margin-top: 56px;
+  margin-bottom: 30px;
   font-size: 20px;
-  display: flex ;  /*нужно разобраться чтобы разделить ценуи ценник*/
+  display: flex ;
   justify-content: space-between; /*расположение элементов по ширине с одинаковыми отступами*/
+}
+.button {
+  font-family: Montserrat;
+  width: 102px;
+  height: 31.62px;
+  margin: 0px auto;
+  border-width: 2px;
+  border-radius: 6px;
+  border-color: #464F6029;
+  background-color: #FFFFFF;
+  color: Gray/700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  cursor: pointer;
+  letter-spacing: 2%;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0px 0px 0px 1px #464F6029,
+  0px 1px 1px 0px #0000001A;
+
+}
+.button:hover {
+  transition: all 0ms;
+  box-shadow: 0px 0px 0px 1px #464F6052,
+  0px 1px 1px 0px #0000001A;
+  color: Gray/900;
+}
+.button:focus {
+  transition: all 0ms;
+  box-shadow: 0px 0px 0px 4px #4FDB8A33,
+  0px 0px 0px 1px #464F6052,
+  0px 1px 1px 0px #0000001A;
+  color: Gray/700;
+}
+.button:disabled {
+  transition: all 0ms;
+  box-shadow: 0px 0px 0px 1px #464F6033;
+  color: Gray/400;
+}
+.plus {
+  margin-top: 6%;
 }
