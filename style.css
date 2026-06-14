@@ -8,8 +8,12 @@ body {
   color: #515076;
 }
 .container{
-  max-width: 1280px;
+  background-image: url(images/dandelion_bg.png);
+  background-size: 71%;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
   margin: 0px auto;
+  max-width: 1110px;
 }
 .title {    /*Заголовок*/
   font-weight: 400;
@@ -19,11 +23,33 @@ body {
   margin: 0;
   padding-top: 220px;
   padding-bottom: 110px;
-  background-image: url(images/dandelion_bg.png);
-  background-size: 790px 697px;
-  background-repeat: no-repeat;
-  background-position: 85px 0px;
 }
+
+@media (max-width: 1024px) {      /*для планшетов */
+  .title {
+    font-size: 60.2px;
+    line-height: 67.08px;
+    padding-top: 189.2px;
+    padding-bottom: 94.6px;
+  }
+  .container {
+  background-size: 70%;
+  }
+
+}
+@media (max-width: 768px) {      /*для телефонов */
+  .title {
+    font-size: 30.15px;
+    line-height: 33.54px;
+    padding-top: 94.5px;
+    padding-bottom: 47.3px;
+  }
+  .container {
+  background-size: 50%;
+  }
+
+}
+
 .product-title {
   font-size: 20px;
 }
@@ -32,7 +58,6 @@ body {
   padding: 0;
   margin: 0 auto;
   gap: 45px;
-  max-width: 1110px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -44,6 +69,8 @@ body {
   box-shadow: 2px 2px 10px 0px;   /*card shadow / тень карточки*/
   padding: 25px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
  .product-card:hover {
   transform: translateY(-8px);    /* сдвигает карточку по оси У */
@@ -102,4 +129,7 @@ body {
 }
 .plus {
   margin-top: 6%;
+}
+.price-buy-wrapper{
+  margin-top: auto;
 }
