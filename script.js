@@ -42,47 +42,8 @@ function outputConsoleLog(message) {
   console.log(message);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 1. Находим элементы (не забудьте заменить классы на ваши из HTML)
-// const changeColorCardButton = document.querySelector('.button-class'); // класс вашей кнопки
-// const productCards = document.querySelectorAll('.card-class');        // класс ваших карточек
-
-// // 2. Массив из 4 золотых/желтых оттенков
-// const goldColors = [
-//   '#FFD700', // Классическое золото
-//   '#D4AF37', // Металлическое золото
-//   '#C5A059', // Матовое золото
-//   '#E5A93B'  // Янтарное золото
-// ];
-
-// // 3. Переменная для отслеживания текущего цвета
-// let currentColorIndex = 0;
-
-// // 4. Логика смены цветов по кругу
-// changeColorCardButton.addEventListener('click', () => {
-//   // Получаем текущий цвет из массива
-//   const nextColor = goldColors[currentColorIndex];
-
-//   // Красим все карточки в этот цвет
-//   productCards.forEach((card) => {
-//     card.style.backgroundColor = nextColor;
-//   });
-
-//   // Переключаем индекс на следующий элемент. 
-//   // Конструкция "% goldColors.length" сбрасывает индекс в 0, когда доходим до конца (после 3 идет 0)
-//   currentColorIndex = (currentColorIndex + 1) % goldColors.length;
-// });
+// Вывод в консоль содержимое заголовка
+const mainTitle = document.querySelector ('.container__title');
+mainTitle.addEventListener('mouseenter', (eveent) => {
+  console.log(event.target.textContent);
+})
