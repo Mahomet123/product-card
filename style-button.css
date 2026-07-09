@@ -1,0 +1,36 @@
+.button {
+  font-family: Montserrat;
+  width: 102px;
+  height: 31.62px;
+  border-width: 2px;
+  border-radius: 6px;
+  border-color: #464F6029;
+  background-color: #FFFFFF;
+  color: #464F60;
+  display: flex;
+  gap: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  letter-spacing: 2%;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0px 0px 0px 1px #464F6029,
+  0px 1px 1px 0px #0000001A;
+  transition: all 0.3ms;
+}
+.button:hover {
+  box-shadow: 0px 0px 0px 1px #464F6052,
+  0px 1px 1px 0px #0000001A;
+  color: #171C26;
+}
+.button:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 4px #4FDB8A33,
+  0px 0px 0px 1px #464F6052,
+  0px 1px 1px 0px #0000001A;
+  color: #464F60;
+}
+.button:disabled {
+  box-shadow: 0px 0px 0px 1px #464F6033;
+  color: #868FA0;
+}
