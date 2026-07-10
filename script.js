@@ -48,6 +48,7 @@ mainTitle.addEventListener('mouseenter', (eveent) => {
   console.log(event.target.textContent);
 })
 
+// Кнопка меняющая цвет
 const btnChangeColor = document.querySelector ('#btn-change-color');
 btnChangeColor.addEventListener('click', function() {
   btnChangeColor.classList.toggle('activ-btn');
