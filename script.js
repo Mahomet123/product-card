@@ -1,20 +1,20 @@
 // Покраска всех карточек
-const proguctCards = document.querySelectorAll('.product-card');
+const productCards = document.querySelectorAll('.product-card');
 const changeColorCardsButton = document.querySelector('#change-bgs-card-btn');
 const orangeColorHash = '#FF7700';
 const goldColorHash = '#FFD900';
 
 changeColorCardsButton.addEventListener('click', () => {
-  proguctCards.forEach((card) => card.style.backgroundColor = orangeColorHash)
-})
+  proguctCards.forEach((card) => card.style.backgroundColor = orangeColorHash);
+});
 
 // Покраска первой карточки
-const firstproductCard = document.querySelector('.product-card');
+const firstProductCard = document.querySelector('.product-card');
 const changeColorCardButton = document.querySelector('#change-bg-card-btn');
 
 changeColorCardButton.addEventListener('click', () => {
-  firstproductCard.style.backgroundColor = goldColorHash;
-})
+  firstProductCard.style.backgroundColor = goldColorHash;
+});
 
 // Открыть google
 const openGoogleButton = document.querySelector('#open-google');
@@ -44,14 +44,14 @@ function outputConsoleLog(message) {
 
 // Вывод в консоль содержимое заголовка
 const mainTitle = document.querySelector ('.container__title');
-mainTitle.addEventListener('mouseenter', (eveent) => {
+mainTitle.addEventListener('mouseenter', (event) => {
   console.log(event.target.textContent);
-})
+});
 
 // Кнопка меняющая цвет
 const btnChangeColor = document.querySelector ('#btn-change-color');
 btnChangeColor.addEventListener('click', function() {
-  btnChangeColor.classList.toggle('activ-btn');
-  const isClassActive = btnChangeColor.classList.contains('activ-btn');
+  btnChangeColor.classList.toggle('btn--active');
+  const isClassActive = btnChangeColor.classList.contains('btn--active');
   console.log('Кнопка нажата', isClassActive);
-})
+});
