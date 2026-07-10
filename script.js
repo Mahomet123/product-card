@@ -47,3 +47,10 @@ const mainTitle = document.querySelector ('.container__title');
 mainTitle.addEventListener('mouseenter', (eveent) => {
   console.log(event.target.textContent);
 })
+
+const btnChangeColor = document.querySelector ('#btn-change-color');
+btnChangeColor.addEventListener('click', function() {
+  btnChangeColor.classList.toggle('activ-btn');
+  const isClassActive = btnChangeColor.classList.contains('activ-btn');
+  console.log('Кнопка нажата', isClassActive);
+})
