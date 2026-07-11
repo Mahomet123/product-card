@@ -5,7 +5,7 @@ const orangeColorHash = '#FF7700';
 const goldColorHash = '#FFD900';
 
 changeColorCardsButton.addEventListener('click', () => {
-  proguctCards.forEach((card) => card.style.backgroundColor = orangeColorHash);
+  productCards.forEach((card) => card.style.backgroundColor = orangeColorHash);
 });
 
 // Покраска первой карточки
@@ -50,8 +50,8 @@ mainTitle.addEventListener('mouseenter', (event) => {
 
 // Кнопка меняющая цвет
 const btnChangeColor = document.querySelector ('#btn-change-color');
-btnChangeColor.addEventListener('click', function() {
-  btnChangeColor.classList.toggle('btn--active');
-  const isClassActive = btnChangeColor.classList.contains('btn--active');
+btnChangeColor?.addEventListener('click', function() {
+  btnChangeColor.classList.toggle('button--active');
+  const isClassActive = btnChangeColor.classList.contains('button--active');
   console.log('Кнопка нажата', isClassActive);
 });

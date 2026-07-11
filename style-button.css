@@ -1,7 +1,7 @@
 .button {
   font-family: Montserrat;
   width: 102px;
-  height: 31.62px;
+  min-height: 31.62px;
   border-width: 2px;
   border-radius: 6px;
   border-color: #464F6029;
@@ -41,7 +41,7 @@
   color: #ffffff;
 }
 
-.btn--active {
+.button--active {
   background-color: #15ff00 !important;
   color: #ffffff;
 }
