@@ -33,7 +33,7 @@ function openGoogle () {
 }
 
 // Вывод консоль лог
-const outputLogButon = document.querySelector ('#output-console-log');
+const outputLogButon = document.querySelector('#output-console-log');
 outputLogButon.addEventListener('click', () => {
   outputConsoleLog('ДЗ №6');
 });
@@ -43,13 +43,13 @@ function outputConsoleLog(message) {
 }
 
 // Вывод в консоль содержимое заголовка
-const mainTitle = document.querySelector ('.container__title');
+const mainTitle = document.querySelector('.container__title');
 mainTitle.addEventListener('mouseenter', (event) => {
   console.log(event.target.textContent);
 });
 
 // Кнопка меняющая цвет
-const btnChangeColor = document.querySelector ('#btn-change-color');
+const btnChangeColor = document.querySelector('#btn-change-color');
 btnChangeColor?.addEventListener('click', function() {
   btnChangeColor.classList.toggle('button--active');
   const isClassActive = btnChangeColor.classList.contains('button--active');
