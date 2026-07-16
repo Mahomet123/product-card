@@ -1,8 +1,12 @@
 // Задание 3
 let city = 'Грозный';
 let temperature = 30;
-const tempCity = `Сейчас в ${city} температура - ${temperature} градусов по Цельсию`;
-console.log(tempCity);
+function tempCity (city, temperature) {
+  return (
+    `Сейчас в ${city} температура ${temperature} градусов по Цельсию`
+  )
+}
+console.log(tempCity(city, temperature));
 
 // Задание 4
 const LIGHT_SPEED = 299792458;
