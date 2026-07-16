@@ -4,7 +4,7 @@ let temperature = 30;
 function tempCity (city, temperature) {
   return (
     `Сейчас в ${city} температура ${temperature} градусов по Цельсию`
-  )
+  );
 }
 console.log(tempCity(city, temperature));
 
