@@ -1,9 +1,10 @@
 // Задание 3
 let city = 'Грозный';
 let temperature = 30;
-function displayCityTemperature(city, temperature) {
-  console.log(`Сейчас в ${city} температура ${temperature} градусов по Цельсию`);
-}
+function displayCityTemperature(city, temperature) {}
+
+console.log(`Сейчас в ${city} температура ${temperature} градусов по Цельсию`);
+
 displayCityTemperature()
 
 
