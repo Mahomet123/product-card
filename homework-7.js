@@ -1,12 +1,11 @@
 // Задание 3
 let city = 'Грозный';
 let temperature = 30;
-function tempCity (city, temperature) {
-  return (
-    `Сейчас в ${city} температура ${temperature} градусов по Цельсию`
-  );
+function displayCityTemperature(city, temperature) {
+  console.log(`Сейчас в ${city} температура ${temperature} градусов по Цельсию`);
 }
-console.log(tempCity(city, temperature));
+displayCityTemperature()
+
 
 // Задание 4
 const LIGHT_SPEED = 299792458;
@@ -33,7 +32,7 @@ function budget(calculation) {
   if (buyProduct <= calculation) {
     console.log(`Товар ${apple} приобретён. Спасибо за покупку!`);
   } else {
-    console.log(`Вам не хватает ${buyProduct} - ${calculation}) + $ пополните баланс`);
+    console.log(`Вам не хватает ${buyProduct - calculation}$, пополните баланс`);
   }
 }
 
@@ -45,7 +44,7 @@ function myName(name) {
   console.log(name);
   return name;
 }
-myName ("Мухаммад");
+myName("Мухаммад");
 
 // Задание 7
 const myLastName = 'Усманов'
