@@ -1,12 +1,11 @@
 // Задание 3
 let city = 'Грозный';
 let temperature = 30;
-function displayCityTemperature(city, temperature) {}
-
+function displayCityTemperature(city, temperature) {
 console.log(`Сейчас в ${city} температура ${temperature} градусов по Цельсию`);
+}
 
-displayCityTemperature()
-
+displayCityTemperature(city, temperature)
 
 // Задание 4
 const LIGHT_SPEED = 299792458;
@@ -43,7 +42,6 @@ budget (100);
 // Задание 6
 function myName(name) {
   console.log(name);
-  return name;
 }
 myName("Мухаммад");
 
