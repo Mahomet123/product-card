@@ -2,7 +2,7 @@
 let city = 'Грозный';
 let temperature = 30;
 function displayCityTemperature(city, temperature) {
-console.log(`Сейчас в ${city} температура ${temperature} градусов по Цельсию`);
+  console.log(`Сейчас в ${city} температура ${temperature} градусов по Цельсию`);
 }
 
 displayCityTemperature(city, temperature)
@@ -10,7 +10,6 @@ displayCityTemperature(city, temperature)
 // Задание 4
 const LIGHT_SPEED = 299792458;
 function logLightSpeed(speed) {
-  console.log(speed);
   if (speed > LIGHT_SPEED) {
     console.log('Сверхсветовая скорость');
   } else if (speed === LIGHT_SPEED) {
@@ -20,9 +19,9 @@ function logLightSpeed(speed) {
   }
 }
 
-logLightSpeed(399792458)    // Сверхсветовая скорость
-logLightSpeed(199792458)    // Субсветовая скорость
-logLightSpeed(299792458)    //Скорость света
+logLightSpeed(399792458);    // Сверхсветовая скорость
+logLightSpeed(199792458);    // Субсветовая скорость
+logLightSpeed(299792458);    //Скорость света
 
 // Задание 5
 let apple = 'Яблоки Голден';
@@ -46,6 +45,6 @@ function myName(name) {
 myName("Мухаммад");
 
 // Задание 7
-const myLastName = 'Усманов'
-let age = 32
-let currentCity = 'Грозный'
+const myLastName = 'Усманов';
+let age = 32;
+let currentCity = 'Грозный';
