@@ -11,19 +11,32 @@ const user = {
   RelationshipStatus: "Женат"
 }
 
+console.log(user);
+
 // Задание 4
 const car = {
   brand: "Toyota",
-  model: "CamryX5",
+  model: "Camry",
   year: 2025,
   color: "black",
   transmission: "automatic",
 }
 
-const carOwner = {
-  owner: "user"
+car.carOwner = user;
+
+console.log(car);
+
+// Задача 5
+function searchMaxSpeedCar (carObj, maxSpeed) {
+  if (Object.hasOwn(carObj, "maxSpeed")) {
+    return;
+  }
+  else {
+    carObj.maxSpeed = "200км/ч"}
 }
 
-const carInfo = {...car, ...carOwner}
+searchMaxSpeedCar(car, "200км/ч");      // передаем в параметрах только объект и значение, которое хотим добавить
 
-console.log(carInfo)
+console.log(car);
+
+// Задача 6
