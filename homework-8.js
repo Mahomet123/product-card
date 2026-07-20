@@ -15,7 +15,7 @@ const user = {
   RelationshipStatus: "Женат"
 }
 
-// console.log(user);
+console.log(user);
 
 // Задание 4
 /*Создайте объект, который будет хранить данные об автомобиле (марка, модель, год выпуска, цвет, вид
@@ -32,7 +32,7 @@ const car = {
 
 car.carOwner = user;
 
-// console.log(car);
+console.log(car);
 
 // Задача 5
 /* Написать функцию которая аргументом будет принимать объект, описанный в пункте №4.
@@ -49,14 +49,14 @@ function searchMaxSpeedCar (carObj, maxSpeed) {
 
 searchMaxSpeedCar(car, "200км/ч");      // передаем в параметрах только объект и значение, которое хотим добавить
 
-// console.log(car);
+console.log(car);
 
 // Задача 6
 /* Написать функцию, которая получает первым аргументом — объект, а вторым
 аргументом — свойство объекта, которое нужно вывести и выводит его значение. */
 
 function showObjProperty (car, model) {     // вызываю функцию, именую ее, в скобках указываю параметры: car- сюда падает обект. и имя его свойства (ключа) model - сюда попадает имя свойства в виде строки
-  // console.log(car[model])     // обращаюсь к консоле чтобы она вывела именно значение свойства model из объекта car
+  console.log(car[model])     // обращаюсь к консоле чтобы она вывела именно значение свойства model из объекта car
 }
 showObjProperty(car, 'model')     // вызываю функцию и передаю ей ссылку на 1й аргумент - объект car, строку model как 2й аргумент - имя свойства в ковычках, чтобы функция знала что вывести
 
@@ -96,7 +96,7 @@ const books = [
   },
 ]
 
-books.push(
+books.push(     //добавляем новую книгу
   {
     title: 'Тихий Дон',
     author: 'Михаил Шолохов',
@@ -106,11 +106,10 @@ books.push(
   }
 );
 
-// console.log(books)
+console.log(books)
 
 // Задача 9
-/* 
-Создать еще один массив, состоящих из тех же книг, но относящийся к определенной вселенной
+/* Создать еще один массив, состоящих из тех же книг, но относящийся к определенной вселенной
 (Гарри Поттер, Марвел и так далее). (Если используете другую, свою сущность - импровизируйте).
 С помощью известного нам метода массива или оператора (рекомендую использовать оператор),
 объединить эти два массива в один */
@@ -139,11 +138,27 @@ const booksHarryPotter = [
   coverColor: "зеленый",
   genre: "фэнтези",
   },
-]
 
-const allBooks = [...books, ...booksHarryPotter]
+  {
+    title: "Гарри Поттер и Кубок огня",
+    author: "Джоан Роулинг",
+    year: 2000,
+    coverColor: "желтый",
+    genre: "фэнтези"
+  },
 
-console.log(allBooks)
+  {
+    title: "Гарри Поттер и Орден Феникса",
+    author: "Джоан Роулинг",
+    year: 2003,
+    coverColor: "синий",
+    genre: "фэнтези"
+  }
+];
+
+const allBooks = [...books, ...booksHarryPotter];     // склеиваем два массива
+
+console.log(allBooks);
 
 
 // Задача 10
@@ -153,3 +168,21 @@ console.log(allBooks)
 false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true
 (да, это редкий), нет - false (значит это не редкий). */
 
+const newArray = allBooks.map(
+  function(newArrayObj, isRare) {      // добавляем свойство isRare
+    if (Object.hasOwn(newArrayObj, "isRare")) {
+      return newArrayObj;
+    }
+
+    if (newArrayObj.year > 2000) {      // если год больше 2000 возврашаем true
+      newArrayObj.isRare = true;
+      return newArrayObj;
+    } 
+    else {
+      newArrayObj.isRare = false
+      return newArrayObj;
+    }
+    return newArrayObj;
+  });
+
+  console.log(newArray)
