@@ -12,10 +12,10 @@ const user = {
   age: 32,
   country: "Россия",
   city: "Грозный",
-  RelationshipStatus: "Женат"
+  relationshipStatus: "Женат"
 }
 
-console.log(user);
+// console.log(user);
 
 // Задание 4
 /*Создайте объект, который будет хранить данные об автомобиле (марка, модель, год выпуска, цвет, вид
@@ -32,25 +32,35 @@ const car = {
 
 car.carOwner = user;
 
-console.log(car);
+// console.log(car);
 
 // Задача 5
 /* Написать функцию которая аргументом будет принимать объект, описанный в пункте №4.
 Она проверяет,есть ли в объекте свойство "максимальная скорость", если нет - добавляет
 его и задает значение, если есть - прекращает выполнение (ничего не делает) */
 
-function searchMaxSpeedCar (carObj, maxSpeed) {
+function setMaxCarSpeed(carObj, maxSpeed) {
   if (Object.hasOwn(carObj, "maxSpeed")) {
     return;
-  }
-  else {
+  } else {
     carObj.maxSpeed = "200км/ч"}
 }
 
-searchMaxSpeedCar(car, "200км/ч");      // передаем в параметрах только объект и значение, которое хотим добавить
+setMaxCarSpeed(car, "200км/ч");      // передаем в параметрах только объект и значение, которое хотим добавить
 
-console.log(car);
 
+if (!Object.hasOwn(car, "maxSpeed")) {
+    car.maxSpeed = "200км/ч"
+  }
+
+
+// console.log(car);
+
+if (Object.hasOwn(car, 'minSpeed')) {
+  console.log(car.minSpeed);
+  // сar.minSpeed = '0км/ч'
+}
+  
 // Задача 6
 /* Написать функцию, которая получает первым аргументом — объект, а вторым
 аргументом — свойство объекта, которое нужно вывести и выводит его значение. */
@@ -78,23 +88,21 @@ const books = [
     coverColor: "зеленый",
     genre: "роман-эпопея",
   },
-  
   {
-  title: "Преступление и наказание",
-  author: "Федор Достоевский",
-  year: 1866,
-  coverColor: "красный",
-  genre: "роман",
+    title: "Преступление и наказание",
+    author: "Федор Достоевский",
+    year: 1866,
+    coverColor: "красный",
+    genre: "роман",
   },
-
   {
-  title: "Мастер и Маргарита",
-  author: "Михаил Булгаков",
-  year: 1967,
-  coverColor: "черный",
-  genre: "мистичемкий роман",
+    title: "Мастер и Маргарита",
+    author: "Михаил Булгаков",
+    year: 1967,
+    coverColor: "черный",
+    genre: "мистичемкий роман",
   },
-]
+];
 
 books.push(     //добавляем новую книгу
   {
@@ -122,23 +130,20 @@ const booksHarryPotter = [
     coverColor: "фиолетовый",
     genre: "фэнтези",
   },
-  
   {
-  title: "Гарри Поттер и тайная комната",
-  author: "Джоан Роулинг",
-  year: 1998,
-  coverColor: "ксиний / голубой",
-  genre: "фэнтези",
+    title: "Гарри Поттер и тайная комната",
+    author: "Джоан Роулинг",
+    year: 1998,
+    coverColor: "ксиний / голубой",
+    genre: "фэнтези",
   },
-
   {
-  title: "Гарри Поттер и узник Азкабана",
-  author: "Джоан Роулинг",
-  year: 1999,
-  coverColor: "зеленый",
-  genre: "фэнтези",
+    title: "Гарри Поттер и узник Азкабана",
+    author: "Джоан Роулинг",
+    year: 1999,
+    coverColor: "зеленый",
+    genre: "фэнтези",
   },
-
   {
     title: "Гарри Поттер и Кубок огня",
     author: "Джоан Роулинг",
@@ -146,7 +151,6 @@ const booksHarryPotter = [
     coverColor: "желтый",
     genre: "фэнтези"
   },
-
   {
     title: "Гарри Поттер и Орден Феникса",
     author: "Джоан Роулинг",
@@ -169,20 +173,22 @@ false. Что я хочу этим сказать: если книга выпу�
 (да, это редкий), нет - false (значит это не редкий). */
 
 const newArray = allBooks.map(
-  function(newArrayObj, isRare) {      // добавляем свойство isRare
+  function(newArrayObj) {      // добавляем свойство isRare
     if (Object.hasOwn(newArrayObj, "isRare")) {
-      return newArrayObj;
-    }
+      return {
+        ...newArrayObj,
+        isRare: newArrayObj.year > 2000,
+    };
 
     if (newArrayObj.year > 2000) {      // если год больше 2000 возврашаем true
       newArrayObj.isRare = true;
       return newArrayObj;
-    } 
-    else {
+    } else {
       newArrayObj.isRare = false
       return newArrayObj;
     }
     return newArrayObj;
-  });
+  }
+});
 
   console.log(newArray)
