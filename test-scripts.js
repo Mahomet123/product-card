@@ -32,3 +32,29 @@ btnConsoleLog.addEventListener('click', handleButtonClick);
 */
 
 
+// Задача 4
+/* На странице есть кнопка с id="change-bgs-card-btn" (она в твоей боковой панели, первая сверху).
+Напиши строку, которая найдёт эту кнопку и сохранит в константу с именем btnChangeAllCards. */
+
+const btnChangeAllCards = document.querySelector("#change-bgs-card-btn");
+
+// Задача 5
+/* Ниже дана функция:
+
+function openGoogle() {
+    console.log('Открываю Google!');
+}
+Напиши строку, которая вешает эту функцию на кнопку с id="open-google" по событию клика. Переменную для кнопки создай сам с именем btnOpenGoogle. */
+const btnOpenGoogle = document.querySelector("#open-google");
+function openGoogle() {
+  btnOpenGoogle.addEventListener(click)
+  console.log('Открываю Google!');
+}
+openGoogle(btnOpenGoogle);
+
+//задача 6
+const clickBtn = document.querySelector("#change-bg-card-btn");
+function openConsole () {
+  clickBtn.addEventListener(click, "clickBtn")
+}
+console.log(clickBtn);

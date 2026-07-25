@@ -122,7 +122,7 @@ console.log(books)
 С помощью известного нам метода массива или оператора (рекомендую использовать оператор),
 объединить эти два массива в один */
 
-const booksHarryPotter = [
+const HarryPotterBooks = [
   {
     title: "Гарри Поттер и философский камень",
     author: "Джоан Роулинг",
@@ -160,7 +160,7 @@ const booksHarryPotter = [
   }
 ];
 
-const allBooks = [...books, ...booksHarryPotter];     // склеиваем два массива
+const allBooks = [...books, ...HarryPotterBooks];     // склеиваем два массива
 
 console.log(allBooks);
 
@@ -173,25 +173,25 @@ false. Что я хочу этим сказать: если книга выпу�
 (да, это редкий), нет - false (значит это не редкий). */
 
 const newArray = allBooks.map(function(book) {      // добавляем свойство isRare
-  if (Object.hasOwn(book, "isRare")) {
+  if (Object.hasOwn(book, "isRare")) {      // через "Object" вызываем его встроенный метод "hasOwn" для проверки: Если у объекта book есть своё собственное свойство "isRare", то...
     return book;      // если свойство уже есть, возвращаем книгу без изменений
   }
 
-  const booksRare = { ...book }     // создаем копию книг поштучно
-  if (booksRare.year > 2000) {      // если год больше 2000 возврашаем true
-    booksRare.isRare = true;
+  const bookCopy = { ...book }     // создаем копию книг поштучно
+  if (bookCopy.year > 2000) {      // если год больше 2000 возврашаем true
+    bookCopy.isRare = true;
   } else {
-    booksRare.isRare = false;
+    bookCopy.isRare = false;
   }
-  return booksRare;     // возвращаем измененную копию книги в новый массив поштучно
+  return bookCopy;     // возвращаем измененную копию книги в новый массив поштучно
 });
 console.log(newArray)
 
 // Задача 10 без if/else
 const newArray2 = allBooks.map(function(newBook){
-  if (Object.hasOwn(newBook, "isRare"))
+  if (Object.hasOwn(newBook, "isRare")) {
     return newBook;
-
+  }
   return {
     ...newBook,
     isRare: newBook.year > 2000,
@@ -199,3 +199,11 @@ const newArray2 = allBooks.map(function(newBook){
 });
 
 console.log(newArray2)
+
+// Задача 10 без if/else v-2
+const updatedBooks = allBooks.map(currentBook => {
+return {
+  ...currentBook, isRare: currentBook.year > 2000
+  }
+});
+console.log(updatedBooks)
