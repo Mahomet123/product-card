@@ -186,3 +186,16 @@ const newArray = allBooks.map(function(book) {      // добавляем сво
   return booksRare;     // возвращаем измененную копию книги в новый массив поштучно
 });
 console.log(newArray)
+
+// Задача 10 без if/else
+const newArray2 = allBooks.map(function(newBook){
+  if (Object.hasOwn(newBook, "isRare"))
+    return newBook;
+
+  return {
+    ...newBook,
+    isRare: newBook.year > 2000,
+  }
+});
+
+console.log(newArray2)
