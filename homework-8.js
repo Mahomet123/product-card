@@ -15,7 +15,7 @@ const user = {
   relationshipStatus: "Женат"
 }
 
-// console.log(user);
+console.log(user);
 
 // Задание 4
 /*Создайте объект, который будет хранить данные об автомобиле (марка, модель, год выпуска, цвет, вид
@@ -32,7 +32,7 @@ const car = {
 
 car.carOwner = user;
 
-// console.log(car);
+console.log(car);
 
 // Задача 5
 /* Написать функцию которая аргументом будет принимать объект, описанный в пункте №4.
@@ -50,16 +50,16 @@ setMaxCarSpeed(car, "200км/ч");      // передаем в параметр�
 
 
 if (!Object.hasOwn(car, "maxSpeed")) {
-    car.maxSpeed = "200км/ч"
-  }
-
-
-// console.log(car);
-
-if (Object.hasOwn(car, 'minSpeed')) {
-  console.log(car.minSpeed);
-  // сar.minSpeed = '0км/ч'
+  car.maxSpeed = "200км/ч"
 }
+
+
+console.log(car);
+
+if (!Object.hasOwn(car, 'minSpeed')) {
+  car.minSpeed = '0км/ч'
+}
+  console.log(car);
   
 // Задача 6
 /* Написать функцию, которая получает первым аргументом — объект, а вторым
@@ -172,23 +172,17 @@ console.log(allBooks);
 false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true
 (да, это редкий), нет - false (значит это не редкий). */
 
-const newArray = allBooks.map(
-  function(newArrayObj) {      // добавляем свойство isRare
-    if (Object.hasOwn(newArrayObj, "isRare")) {
-      return {
-        ...newArrayObj,
-        isRare: newArrayObj.year > 2000,
-    };
-
-    if (newArrayObj.year > 2000) {      // если год больше 2000 возврашаем true
-      newArrayObj.isRare = true;
-      return newArrayObj;
-    } else {
-      newArrayObj.isRare = false
-      return newArrayObj;
-    }
-    return newArrayObj;
+const newArray = allBooks.map(function(book) {      // добавляем свойство isRare
+  if (Object.hasOwn(book, "isRare")) {
+    return book;      // если свойство уже есть, возвращаем книгу без изменений
   }
-});
 
-  console.log(newArray)
+  const booksRare = { ...book }     // создаем копию книг поштучно
+  if (booksRare.year > 2000) {      // если год больше 2000 возврашаем true
+    booksRare.isRare = true;
+  } else {
+    booksRare.isRare = false;
+  }
+  return booksRare;     // возвращаем измененную копию книги в новый массив поштучно
+});
+console.log(newArray)
