@@ -44,17 +44,24 @@ const btnChangeAllCards = document.querySelector("#change-bgs-card-btn");
 function openGoogle() {
     console.log('Открываю Google!');
 }
-Напиши строку, которая вешает эту функцию на кнопку с id="open-google" по событию клика. Переменную для кнопки создай сам с именем btnOpenGoogle. */
+Напиши строку, которая вешает эту функцию на кнопку с id="open-google" по
+событию клика. Переменную для кнопки создай сам с именем btnOpenGoogle. */
 const btnOpenGoogle = document.querySelector("#open-google");
+  btnOpenGoogle.addEventListener('click', openGoogle);
 function openGoogle() {
-  btnOpenGoogle.addEventListener(click)
   console.log('Открываю Google!');
 }
-openGoogle(btnOpenGoogle);
 
-//задача 6
+// задача 6
+/* Кнопка с id="change-bg-card-btn" (вторая в панели) должна при клике
+выводить в консоль сообщение 'Меняю цвет одной карточки!'.
+Напиши:
+Константу для кнопки (имя придумай сам).
+Именованную функцию (имя придумай сам).
+Обработчик клика, который вызывает эту функцию. */
 const clickBtn = document.querySelector("#change-bg-card-btn");
+  clickBtn.addEventListener('click', openConsole)
 function openConsole () {
-  clickBtn.addEventListener(click, "clickBtn")
+  console.log('Меняю цвет одной карточки!');
 }
-console.log(clickBtn);
+
