@@ -122,7 +122,7 @@ console.log(books)
 С помощью известного нам метода массива или оператора (рекомендую использовать оператор),
 объединить эти два массива в один */
 
-const HarryPotterBooks = [
+const harryPotterBooks = [
   {
     title: "Гарри Поттер и философский камень",
     author: "Джоан Роулинг",
@@ -160,7 +160,7 @@ const HarryPotterBooks = [
   }
 ];
 
-const allBooks = [...books, ...HarryPotterBooks];     // склеиваем два массива
+const allBooks = [...books, ...harryPotterBooks];     // склеиваем два массива
 
 console.log(allBooks);
 
@@ -202,8 +202,8 @@ console.log(newArray2)
 
 // Задача 10 без if/else v-2
 const updatedBooks = allBooks.map(currentBook => {
-return {
-  ...currentBook, isRare: currentBook.year > 2000
+  return {
+    ...currentBook, isRare: currentBook.year > 2000
   }
 });
 console.log(updatedBooks)
