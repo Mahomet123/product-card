@@ -35,12 +35,24 @@ console.log(mask);
 
 // Задача 4
 // Написать функцию, которая аргументом будет принимать массив и изменять его порядок на противоположный ("переворачивать") . Два вышеуказанных массива с помощью этой функции перевернуть.
-function reversArr () {
+// перевернул без функции
 const resultNumbers = [...numbers].reverse();
 console.log(resultNumbers);
 const resultCatalog = [...catalog].reverse();
 console.log(resultCatalog);
+
+//переворачиваю через функцию
+function reversArr(arr) {      // создал функцию именовал ее, параметром которая будет принимать аргументы именовал как "arr"
+  const copy = [...arr];     // сохраняем копию того, что придет в параметр ф-ии в переменной "copy" (оригинал приходит, еще не перевернутый)
+  return copy.reverse();     // переворачиваем сохраненную копию и выбрасывет наружу
 }
+// обязательно вызываю функцию и кладу туда аргументом массив "numbers" и "catalog" чтобы код заработал. а в "reversArr"(имя которое я дал ф-ии) подхватывает то что выбросил наружу "return"
+const reversedNumbers = reversArr (numbers);
+const reversedCatalog = reversArr (catalog);
+//после уже выводим в консоль
+console.log(reversedNumbers);
+console.log(reversedCatalog);
+
 // Задача 5
 /* Добавить файл comments.js, в нём создать константу и в него поместить первые 10 объектов
 этого массива. Данный массив представляет собой пример комментариев в соц. сетях, поэтому
@@ -54,17 +66,19 @@ import {comments} from './comments.js'
 // Задача 7
 // Вывести в консоль массив тех комментариев, почта пользователей которых содержит ".com"
 const resultComment = [];
-for (let i = 0; i < comments.length; i++) {
-  if (comments[i].email.includes('.com')) {
-  resultComment.push(comments[i]);
+for (let i = 0; i < comments.length; i++) {     // проходимся по массиву "comments" (let i = 0)старт с 0 индекса. (i < массив.length) Условие: пока индекс меньше длины массива продолжаем проверку. (i++) после каждой итерации увеличиваем (i)индекс на 1. т.е проверил 0 индекс, увеличиваем индекс старта на 1 единицу и так до последнего
+  if (comments[i].email.includes('.com')) {     //если в массиве "comments" по индексу в свойствах email содержится значение которое вкл в себя .com
+  resultComment.push(comments[i]);      // добавляем этот объект в конец переменной resultComment
   };
 }
 console.log(resultComment);
-
-const result = resultComment.filter(value => {
-  return value = obj.email.includes('.com')
-})
+/* сделать через фильтрацию, если массив коммент вкл в себя
+com сохр в перем и потом моно вывести в консоль */
+const result = comments.filter(value => {     //фильтр берет каждый объект массива "comments" и передает в ф-ию value и ждет указаний
+  return value.email.includes('.com')     // смотрим в каждом объекте, вкл ли в себя свойство email значение которое содержит ".com" и если такие есть возвращает в параметр ф-ии "value"
+});
 console.log(result);
-
-
+//можно и без return, принцип тот же (а если в comments.email.includes добавить знак "?" (Optional Chaining), то не будут ошибки при отсутствии свойства email, код продолжит работать)
+const resultRewievs = comments.filter(comments => comments.email.includes ('.com'))
+console.log(resultRewievs)
 
