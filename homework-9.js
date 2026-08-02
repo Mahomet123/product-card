@@ -42,16 +42,16 @@ const resultCatalog = [...catalog].reverse();
 console.log(resultCatalog);
 
 //переворачиваю через функцию
-function reversArr(arr) {      // создал функцию именовал ее, параметром которая будет принимать аргументы именовал как "arr"
-  const copy = [...arr];     // сохраняем копию того, что придет в параметр ф-ии в переменной "copy" (оригинал приходит, еще не перевернутый)
+function reversArr(arr, array) {      // создал функцию именовал ее, параметром которая будет принимать аргументы именовал как "arr"
+  const copy = [...arr, ...array];     // сохраняем копию того, что придет в параметр ф-ии в переменной "copy" (оригинал приходит, еще не перевернутый)
   return copy.reverse();     // переворачиваем сохраненную копию и выбрасывет наружу
 }
 // обязательно вызываю функцию и кладу туда аргументом массив "numbers" и "catalog" чтобы код заработал. а в "reversArr"(имя которое я дал ф-ии) подхватывает то что выбросил наружу "return"
-const reversedNumbers = reversArr (numbers);
-const reversedCatalog = reversArr (catalog);
+const reversedNumbers = reversArr (numbers, catalog);
+// const reversedCatalog = reversArr (catalog);
 //после уже выводим в консоль
 console.log(reversedNumbers);
-console.log(reversedCatalog);
+// console.log(reversedCatalog);
 
 // Задача 5
 /* Добавить файл comments.js, в нём создать константу и в него поместить первые 10 объектов
@@ -79,6 +79,60 @@ const result = comments.filter(value => {     //фильтр берет кажд
 });
 console.log(result);
 //можно и без return, принцип тот же (а если в comments.email.includes добавить знак "?" (Optional Chaining), то не будут ошибки при отсутствии свойства email, код продолжит работать)
-const resultRewievs = comments.filter(comments => comments.email.includes ('.com'))
-console.log(resultRewievs)
+const resultRewievs = comments.filter(comment => comment.email.includes ('.com'));
+console.log(resultRewievs);
+
+// решение через пустую ф-ию
+const callBack = (comment) => {
+  return comment.email.includes('.com');
+}
+// callBack(comments[0]);     //простой вызов ф-ии
+// const result1 = callBack(comments[0]);     //вызов ф-тии с сохранение  в переменную
+console.log(callBack(comments[0]));     //вызов ф-ию и через консоль
+
+const resultRewievs1 = comments.filter(callBack);     // передал функцию из 85строчки в "comments.filter"
+console.log(resultRewievs1);
+
+// Задача 8
+/* Перебрать массив таким образом, что бы пользователи с id меньше или равно 5
+имели postId: 2, а те, у кого id больше 5, имели postId: 1 */
+
+// const users = {...comments}
+const users = comments.map(comment => {
+  if (comment.id <= 5) {
+  comment.postId = 2
+  } else comment.postId = 1
+  return comment
+});
+console.log(users);
+
+// делаем тоже самое без if/else
+const user1 = comments.map((comment, postId) => {
+  return {...comment, postId: comment.id <= 5 ? 2: 1}
+})
+console.log(user1);
+
+// делаем тоже самое без return
+const user2 = comments.map((comment, postId) => {
+  return {...comment, postId: comment.id <= 5 ? 2: 1}
+})
+console.log(user2);
+
+// Задача 9
+// Перебрать массив, что бы объекты состояли только из айди и имени
+const userName = comments.map(comment => {
+  return {
+    id: comment.id,
+    name: comment.name
+  }
+});
+console.log(userName);
+
+// Задача 10
+/* Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела
+сообщения (body) больше 180 символов - устанавливаем true, меньше - false. */
+const commentsArr = comments.map(comment => {
+  return {...comment, isInvalid: comment.body.length > 180}
+});
+console.log(commentsArr);
 
