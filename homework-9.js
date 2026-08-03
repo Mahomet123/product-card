@@ -112,10 +112,10 @@ const user1 = comments.map((comment, postId) => {
 })
 console.log(user1);
 
-// делаем тоже самое без return
-const user2 = comments.map((comment, postId) => {
-  return {...comment, postId: comment.id <= 5 ? 2: 1}
-})
+// делаем тоже самое return
+const user2 = comments.map((comment) => ({
+  ...comment,
+  postId: comment.id <= 5 ? 2: 1}));
 console.log(user2);
 
 // Задача 9
@@ -136,3 +136,28 @@ const commentsArr = comments.map(comment => {
 });
 console.log(commentsArr);
 
+// Задача 11
+/* Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть
+тоже самое с помощью метода map */
+let allEmail = comments.reduce(function(acc, comment) {
+  acc.push(comment.email);
+  return acc
+}, []);
+console.log(allEmail);
+
+// тоже самое с помощью метода map
+let allEmail2 = comments.map(function(comment) {
+  return comment.email});
+console.log(allEmail2);
+
+// то же самое через стрелочную ф-ию
+let allEmail3 = comments.map(comment => comment.email);
+console.log(allEmail3);
+
+// Задача 12
+/* Почитать про методы toString(), join() и перебрав массив с задания №11,
+привести его к строке. */
+let allEmail4 = comments.reduce((acc, comment) => {
+  return [acc] + comment.email + ', ';
+}, '' );
+console.log(allEmail4);
