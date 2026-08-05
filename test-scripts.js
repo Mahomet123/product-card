@@ -81,7 +81,7 @@ const changeColor = document.querySelector('#btn-change-color')
 changeColor.addEventListener('click', showChangeColor);
   function showChangeColor () {
     if (changeColor.style.backgroundColor === '#B005FF') {     // если цвет фона такой
-    chageColor.style.backgroundColor = '#0000ff';     // присваиваем такой цвет фона
+    changeColor.style.backgroundColor = '#0000ff';     // присваиваем такой цвет фона
     console.log('Цвет поменялся на синий.')
   } else {
       changeColor.style.backgroundColor = '#B005FF';     // иначе присваиваем такой цвет фона
@@ -100,9 +100,9 @@ changeColor.addEventListener('click', showChangeColor2);
   }
 
 // Задача 8
-// 8.1  у тебя есть переменная const city = 'Москва';. Выведи в консоль строку Я живу в Москве.
-const city = "Москва";
-console.log(`Я живу в ${city}`);
+// 8.1  у тебя есть переменная const city1 = 'Москва';. Выведи в консоль строку Я живу в Москве.
+const city1 = "Москва";
+console.log(`Я живу в ${city1}`);
 
 // 8.2 у тебя есть const item = 'Увлажняющий мусс'; и const price = 2750;. Выведи Товар: Увлажняющий мусс, цена: 2750 ₽.
 const item = 'Увлажняющий мусс';

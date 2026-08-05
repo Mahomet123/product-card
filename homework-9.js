@@ -7,10 +7,10 @@ const numbersFilter = numbers.filter(function(value){
 console.log(numbersFilter);
 
 // стрелочная функция
-const numbersFlt = numbers.filter(value => {
+const filteredNumbers = numbers.filter(value => {
   return value >= 5;
 });
-console.log(numbersFlt);
+console.log(filteredNumbers);
 
 // Задача 3
 // Создать массив строк, относящихся к любой сущности (название фильмов/книг, кухонные приборы, мебель и т.д.), проверить, есть ли в массиве какая-то определенная сущность.
@@ -41,6 +41,12 @@ console.log(resultNumbers);
 const resultCatalog = [...catalog].reverse();
 console.log(resultCatalog);
 
+//делаем то же самое но уже не меняя исходный массив, а возврашая новый перевернуты
+const resultNumbers2 = numbers.toReversed();
+console.log(resultNumbers2);
+const resultCatalog2 = catalog.toReversed();
+console.log(resultCatalog2);
+
 //переворачиваю через функцию
 function reversArr(arr, array) {      // создал функцию именовал ее, параметром которая будет принимать аргументы именовал как "arr"
   const copy = [...arr, ...array];     // сохраняем копию того, что придет в параметр ф-ии в переменной "copy" (оригинал приходит, еще не перевернутый)
@@ -68,12 +74,12 @@ import {comments} from './comments.js'
 const resultComment = [];
 for (let i = 0; i < comments.length; i++) {     // проходимся по массиву "comments" (let i = 0)старт с 0 индекса. (i < массив.length) Условие: пока индекс меньше длины массива продолжаем проверку. (i++) после каждой итерации увеличиваем (i)индекс на 1. т.е проверил 0 индекс, увеличиваем индекс старта на 1 единицу и так до последнего
   if (comments[i].email.includes('.com')) {     //если в массиве "comments" по индексу в свойствах email содержится значение которое вкл в себя .com
-  resultComment.push(comments[i]);      // добавляем этот объект в конец переменной resultComment
+    resultComment.push(comments[i]);      // добавляем этот объект в конец переменной resultComment
   };
 }
 console.log(resultComment);
 /* сделать через фильтрацию, если массив коммент вкл в себя
-com сохр в перем и потом моно вывести в консоль */
+com сохр в перем и потом можно вывести в консоль */
 const result = comments.filter(value => {     //фильтр берет каждый объект массива "comments" и передает в ф-ию value и ждет указаний
   return value.email.includes('.com')     // смотрим в каждом объекте, вкл ли в себя свойство email значение которое содержит ".com" и если такие есть возвращает в параметр ф-ии "value"
 });
@@ -86,11 +92,14 @@ console.log(resultRewievs);
 const callBack = (comment) => {
   return comment.email.includes('.com');
 }
-// callBack(comments[0]);     //простой вызов ф-ии
-// const result1 = callBack(comments[0]);     //вызов ф-тии с сохранение  в переменную
-console.log(callBack(comments[0]));     //вызов ф-ию и через консоль
+console.log(comments.filter(callBack));
 
-const resultRewievs1 = comments.filter(callBack);     // передал функцию из 85строчки в "comments.filter"
+//проверяем есть содержит ли ".com" в массиве объекта под индексом "0"
+callBack(comments[0]);     //простой вызов ф-ии, результат никуда не сохраняется
+  const result1 = callBack(comments[0]);     //вызов ф-ии с сохранением в переменную, результат сохраняется в result1 - будет true или false
+console.log(callBack(comments[0]));     //вызов ф-ии через консоль и вывод результата
+
+const resultRewievs1 = comments.filter(callBack);     // передал функцию из 92строчки в "comments.filter"
 console.log(resultRewievs1);
 
 // Задача 8
@@ -100,8 +109,10 @@ console.log(resultRewievs1);
 // const users = {...comments}
 const users = comments.map(comment => {
   if (comment.id <= 5) {
-  comment.postId = 2
-  } else comment.postId = 1
+    comment.postId = 2
+  } else {
+    comment.postId = 1
+  }
   return comment
 });
 console.log(users);
@@ -115,7 +126,8 @@ console.log(user1);
 // делаем тоже самое return
 const user2 = comments.map((comment) => ({
   ...comment,
-  postId: comment.id <= 5 ? 2: 1}));
+  postId: comment.id <= 5 ? 2: 1
+}));
 console.log(user2);
 
 // Задача 9
@@ -132,7 +144,10 @@ console.log(userName);
 /* Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела
 сообщения (body) больше 180 символов - устанавливаем true, меньше - false. */
 const commentsArr = comments.map(comment => {
-  return {...comment, isInvalid: comment.body.length > 180}
+  return {
+    ...comment,
+    isInvalid: comment.body.length > 180
+  }
 });
 console.log(commentsArr);
 
@@ -147,7 +162,8 @@ console.log(allEmail);
 
 // тоже самое с помощью метода map
 let allEmail2 = comments.map(function(comment) {
-  return comment.email});
+  return comment.email
+});
 console.log(allEmail2);
 
 // то же самое через стрелочную ф-ию
