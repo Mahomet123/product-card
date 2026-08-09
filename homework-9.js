@@ -177,3 +177,42 @@ let allEmail4 = comments.reduce((acc, comment) => {
   return [acc] + comment.email + ', ';
 }, '' );
 console.log(allEmail4);
+
+//Задача 13
+// Создать ф-ию которая принимает 1-м арг число и возвр true если четно и false если нечетное
+
+function isEven(num) {
+  if(num % 2 === 0) {
+    return true;
+  }
+  return false;
+}
+console.log(isEven(2));
+
+function isEven2(num) {
+  return num % 2 === 0;
+}
+console.log(isEven2(2));
+
+const isEven3 = (num) => num % 2 === 0;
+console.log(isEven3(2));
+
+
+const isEven4 = (num) => {
+  const result = num % 2 === 0;
+  console.log(result);
+  return result;
+}
+isEven4(2)
+
+/*Задача перебрать массив чисел в массив объекта, в котором число будет храниться
+по ключу value и в свойстве isEven будет храниться true или false если число четное 
+или нечетное */
+const numbers1 = [1, 2, 3, 4, 5];
+const numbers2 = numbers1.map(function(num) {
+  return {
+    value: num,
+    isEven: isEven4(num)
+  }
+})
+console.log(numbers2);
