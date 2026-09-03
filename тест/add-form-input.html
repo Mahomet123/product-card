@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Добавление карточек с составом</title>
+  <!-- Подключаем внешние стили -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Форма ввода -->
+  <div class="form-container">
+    <h2>Новый продукт</h2>
+    <form id="cardForm">
+      <div class="form-group">
+        <label for="titleInput">Название:</label>
+        <input type="text" id="titleInput" required placeholder="Например, Пицца">
+      </div>
+
+      <!-- Блок для динамических инпутов состава -->
+      <div class="form-group">
+        <label>Состав:</label>
+        <div id="ingredientsContainer">
+          <div class="ingredient-row">
+            <input type="text" class="ingredient-input" required placeholder="Компонент 1">
+          </div>
+        </div>
+        <button type="button" id="addIngredientBtn" class="btn-add">+ Добавить компонент</button>
+      </div>
+
+      <button type="submit">Создать карточку</button>
+    </form>
+  </div>
+
+  <!-- Контейнер для карточек -->
+  <h2>Список карточек</h2>
+  <div id="cardsContainer" class="cards-container"></div>
+
+  <!-- Шаблон карточки -->
+  <template id="cardTemplate">
+    <div class="card">
+      <h3 class="card-title"></h3>
+      <strong>Состав:</strong>
+      <ul class="card-ingredients-list"></ul>
+    </div>
+  </template>
+
+  <!-- Подключаем JavaScript логику -->
+  <script src="script.js"></script>
+</body>
+</html>
