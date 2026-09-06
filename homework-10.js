@@ -21,10 +21,13 @@ const productCard = document.querySelector('.product-card')
 */
 
 let allProducts = productCards.reduce(function (acc, product) {
-  acc[product.title] = product.description;
-  return acc
-}, {});
-console.log(allProducts)
+  acc.push({
+    title: product.title,
+    description: product.description
+  });
+  return acc;
+}, []);
+console.log(allProducts);
 
 
 // Задача 5
@@ -41,20 +44,9 @@ console.log(allProducts)
 function getCardCount() {
   let userInput = prompt('Сколько карточек отобразить? От 1 до 5', [1]);
   console.log(userInput);
-  if (userInput === null) {
-    return null;  // пользователь отменил
-  }
-  if (userInput === '0') {  //если не оборачивать в ковычки не срабатывало
-    alert('0 не принимается!');
-    return getCardCount();  // пользователь ввел 0 вызываем ф-ию снова
-  }
-  if (userInput === "") {
-    alert('Нельзя оставлять пустым!');
-    return getCardCount();
-  }
 
   const quantity = Number(userInput);  //преобразуем в число (все что принимает prompt форматируется в строку, даже числа)
-  console.log(Number.isNaN(quantity));
+  console.log(Number.isNaN(quantity));  //false если введено число
 
   if (isNaN(quantity) || quantity < 1 || quantity > 5) {  //проверяем получили ли число и в диапазоне ли он от 0-5
     alert('Введите число от 1 - 5!');
@@ -72,14 +64,14 @@ console.log(result);
 const cardTemplate = document.getElementById('product-card-template');
 const productList = document.querySelector('.products-list');
 
-function renderCards() {
+function renderCards(result) {
   const rendering = productCards.slice(0, result).forEach((card) => {
     const productClone = cardTemplate.content.cloneNode(true);
     productClone.querySelector('.product-card__img').src = card.img
     productClone.querySelector('.product-card__label').textContent = card.label
     productClone.querySelector('.product-card__title').textContent = card.title
     productClone.querySelector('.product-card__description').textContent = card.description
-    productClone.querySelector('.product-card__price span').textContent = card.price
+    productClone.querySelector('.price__value').textContent = card.price
 
     const componentList = productClone.querySelector('.product-card__component-list');
     card.components.forEach((component) => {
@@ -91,4 +83,4 @@ function renderCards() {
     console.log(productClone);
   });
 }
-const render = renderCards();
+const render = renderCards(result);
