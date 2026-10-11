@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style-sidepanel.css">
   <link rel="stylesheet" href="style-button.css">
+  <link rel="stylesheet" href="style-footer.css">
+  <link rel="stylesheet" href="style-modal.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -57,14 +59,104 @@
       </li>
     </template>
 
-    
-    <script src="script-sidepanel.js"> </script>
-    <script src="script.js"> </script>
-    <script src="homework-7.js"> </script>
-    <script src="homework-8.js"> </script>
-    <script type="module" src="homework-9.js"> </script>
-    <script type="module" src="homework-10.js"> </script>
-    <!-- <script src="test-scripts.js"> </script> -->
+  </div>
+
+  <!-- Подвал сайта -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__container-main">
+        <div class="footer__brand-wrapper"> <!-- Левая часть -->
+          <p class="footer__brand">Product Cards</p>
+          <p class="footer__slogan">У Нас Самые Лучшие Продукты Для Кожи!</p>
+          <div class="footer__ico">
+            <img class="footer__ico-tg" src="ico/telegram.png" alt="наш tg">
+            <img class="footer__ico-vk" src="ico/vk.png" alt="наш vk">
+          </div>
+        </div>
+
+        <div class="footer__form-wrapper">
+          <form class="footer__form" id="subscribe-form"> <!-- Центральная часть -->
+            <p class="footer__offer">Подпишись на наши акции:</p>
+            <div class="footer__input-container">
+              <input class="footer__input" placeholder="Введи Email..." name="email" type="email" required>
+              <button class="footer__button" type="submit">Подписаться</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="footer__menu-wrapper">
+          <nav class="footer__menu"> <!-- Правая часть -->
+            <p class="footer__menu-title">Быстрые ссылки</p>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item"><a href="">Главная</a></li>
+              <li class="footer__menu-item"><a href="">Магазин</a></li>
+              <li class="footer__menu-item"><a href="">Контакты</a></li>
+              <li class="footer__menu-item"><a href="" id="modal__btn-open">Регистрация</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <p class="footer__copyright">www.product-cards.com © all right reserve</p>
+    </div>
+  </footer>
+
+  <!-- Модальное окно -->
+  <div id="modal" class="modal overlay">
+    <div class="modal-content">
+      <span id="close-modal" class="close-button">&times;</span>
+      <h2>Регистрация</h2>
+      <form class="modal__form" id="register-form">
+        <div class="modal__input-container">
+          <label class="modal__label">
+            <span class="modal__label-text">Имя</span>
+            <input class="modal__input" placeholder="Введите имя..." name="name" type="text" required autofocus>
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Фамилия</span>
+            <input class="modal__input" placeholder="Введите фамилию..." name="lastName" type="text" required>
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Отчество</span>
+            <input class="modal__input" placeholder="Введите отчество..." name="surname" type="text">
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Дата рождения</span>
+            <input class="modal__input" placeholder="Введите дату рождения..." name="birthDate" type="date" required>
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Логин</span>
+            <input class="modal__input" placeholder="Введите логин..." name="login" type="text" required minlength="4">
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Пароль</span>
+            <input class="modal__input" id="password" placeholder="Введите пароль..." name="password" type="password" required
+              minlength="4">
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Повторите пароль</span>
+            <input class="modal__input" id="passwordRepeat" placeholder="Введите повторение пароля..." name="passwordRepeat" type="password"
+              required>
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Email</span>
+            <input class="modal__input" placeholder="Введите Email..." name="email" type="email" required>
+          </label>
+          <button class="modal__button" id="modal__btn-reg" type="submit">Зарегистрироваться</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Скрипты -->
+  <script src="script-sidepanel.js"> </script>
+  <script src="script.js"> </script>
+  <script src="homework-7.js"> </script>
+  <script src="homework-8.js"> </script>
+  <script type="module" src="homework-9.js"> </script>
+  <script type="module" src="homework-10.js"> </script>
+  <script type="module" src="homework-11.js"> </script>
+  <!-- <script src="test-scripts.js"> </script> -->
+
 </body>
 
 </html>

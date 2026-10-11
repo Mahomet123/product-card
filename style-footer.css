@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+/* Тело подвала */
+.footer {}
+
+.footer__container {
+  font-family: Montserrat, sans-serif;
+  background: #3A3A3A;
+  max-width: 1728px;
+  min-height: 477px;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 28px;
+}
+
+/* Тело основной инфы */
+.footer__container-main {
+  padding: 85px 75px 0px 84px;
+  list-style: none;
+  max-width: 1569px;
+  max-height: 147px;
+  /* position: relative; */
+  top: 85px;
+  left: 84px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Левая часть */
+.footer__brand-wrapper {
+  min-width: 409px;
+  min-height: 87px;
+  top: 85px;
+  left: 84px;
+  overflow-wrap: anywhere;
+}
+
+.footer__brand {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 154%;
+  letter-spacing: 0;
+  text-transform: capitalize;
+
+
+}
+
+.footer__slogan {     /* У нас самые лучшие продукты для кожи! */
+font-weight: 400;
+  font-size: 18px;
+  line-height: 154%;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+
+.footer__ico {}
+
+.footer__ico-tg {
+  width: 21px;
+  height: 17.6px;
+  top: 214px;
+  left: 84px;
+
+}
+
+.footer__ico-vk {
+  width: 24px;
+  height: 14px;
+  top: 215.98px;
+  left: 35.5px;
+
+}
+
+/* Центральная часть  */
+.footer__form-wrapper {
+  width: 477px;
+  height: 103px;
+  top: 85px;
+  left: 625px;
+}
+
+.footer__offer {      /* Подпишись на наши акции:*/
+  top: 85px;
+  left: 713px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.footer__input-container {
+  max-width: 477px;
+  height: 61px;
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.footer__input {
+  background: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+
+
+}
+
+.footer__input::placeholder {
+  top: 149px;
+  left: 661px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.footer__input:hover {
+  border-color: #999999;
+  background-color: #ffffff;
+}
+
+.footer__input-container:focus-within {
+  background-color: #ffffff;
+  border-color: #0066cc;
+  /* box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15);  */
+}
+
+.footer__button {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  padding: 0 15px 0 21px;
+  cursor: pointer;
+}
+
+.footer__button::before {
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 18px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+/* Правая часть */
+.footer__menu-wrapper {
+  width: 178px;
+  height: 147px;
+  top: 85px;
+  left: 1475px;
+
+}
+
+.footer__menu-title {
+  padding-bottom: 23px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.footer__menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  list-style: none;
+  font-weight: 400;
+  font-size: 18px;
+  padding-left: 0;
+}
+
+.footer__copyright {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.footer__copyright::before {
+  content: "";
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  /* top: 50%; */
+  top: 6px;
+  width: 66px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 1);
+}

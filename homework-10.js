@@ -57,15 +57,15 @@ function getCardCount() {
 
 
 }
-const result = getCardCount();
-console.log(result);
+const cardsCount = getCardCount();
+console.log(cardsCount);
 
 // Рендерим карточки
 const cardTemplate = document.getElementById('product-card-template');
 const productList = document.querySelector('.products-list');
 
-function renderCards(result) {
-  const rendering = productCards.slice(0, result).forEach((card) => {
+function renderCards(cardsCount) {
+  const rendering = productCards.slice(0, cardsCount).forEach((card) => {
     const productClone = cardTemplate.content.cloneNode(true);
     productClone.querySelector('.product-card__img').src = card.img
     productClone.querySelector('.product-card__label').textContent = card.label
@@ -83,4 +83,4 @@ function renderCards(result) {
     console.log(productClone);
   });
 }
-const render = renderCards(result);
+const render = renderCards(cardsCount);

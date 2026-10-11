@@ -1,0 +1,1891 @@
+﻿====================================================================================
+PROJECT CODE FULL
+====================================================================================
+Корень проекта: C:\Users\HP\Desktop\Projects\product-card
+Дата сборки: 2026-10-11 21:21:40
+Файлов выбрано: 23
+
+====================================================================================
+СТРУКТУРА ПРОЕКТА (ТОЛЬКО ВЫБРАННЫЕ ФАЙЛЫ)
+====================================================================================
+C:\Users\HP\Desktop\Projects\product-card
+├── comments.js
+├── homework-10.js
+├── homework-11.js
+├── homework-7.js
+├── homework-8.js
+├── homework-9.js
+├── ico
+│   ├── telegram.png
+│   └── vk.png
+├── images
+│   ├── botton_add.png
+│   ├── dandelion_bg.png
+│   ├── photo_1.jpg
+│   ├── photo_1.png
+│   ├── photo_2.png
+│   ├── photo_3.png
+│   ├── photo_4.png
+│   └── photo_5.png
+├── index.html
+├── product-cards.js
+├── script.js
+├── style.css
+├── style-button.css
+├── style-footer.css
+└── style-modal.css
+
+====================================================================================
+СОДЕРЖИМОЕ ВЫБРАННЫХ ФАЙЛОВ
+====================================================================================
+
+
+====================================================================================
+ФАЙЛ: comments.js
+====================================================================================
+ИМЯ: comments.js
+РАСШИРЕНИЕ: .js
+РАЗМЕР: 2,97 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+export const comments = [
+  {
+    postId: 1,
+    id: 1,
+    name: "id labore ex et quam laborum",
+    email: "Eliseo@gardner.biz",
+    body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+  },
+  {
+    postId: 1,
+    id: 2,
+    name: "quo vero reiciendis velit similique earum",
+    email: "Jayne_Kuhic@sydney.com",
+    body: "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+  },
+  {
+    postId: 1,
+    id: 3,
+    name: "odio adipisci rerum aut animi",
+    email: "Nikita@garfield.biz",
+    body: "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+  },
+  {
+    postId: 1,
+    id: 4,
+    name: "alias odio sit",
+    email: "Lew@alysha.tv",
+    body: "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
+  },
+  {
+    postId: 1,
+    id: 5,
+    name: "vero eaque aliquid doloribus et culpa",
+    email: "Hayden@althea.biz",
+    body: "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
+  },
+  {
+    postId: 2,
+    id: 6,
+    name: "et fugit eligendi deleniti quidem qui sint nihil autem",
+    email: "Presley.Mueller@myrl.com",
+    body: "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in"
+  },
+  {
+    postId: 2,
+    id: 7,
+    name: "repellat consequatur praesentium vel minus molestias voluptatum",
+    email: "Dallas@ole.me",
+    body: "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor"
+  },
+  {
+    postId: 2,
+    id: 8,
+    name: "et omnis dolorem",
+    email: "Mallory_Kunze@marie.org",
+    body: "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque"
+  },
+  {
+    postId: 2,
+    id: 9,
+    name: "provident id voluptas",
+    email: "Meghan_Littel@rene.us",
+    body: "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus"
+  },
+  {
+    postId: 2,
+    id: 10,
+    name: "eaque et deleniti atque tenetur ut quo ut",
+    email: "Carmen_Keeling@caroline.name",
+    body: "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
+  }
+]
+
+
+====================================================================================
+ФАЙЛ: homework-10.js
+====================================================================================
+ИМЯ: homework-10.js
+РАСШИРЕНИЕ: .js
+РАЗМЕР: 4,73 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+import { productCards } from './product-cards.js';
+
+// Задача 2
+/* Создаем файл js, где будет хранится массив объектов, которые представляют собой
+продуктовые карточки из вёрстки (имейте ввиду, UI-данные не относятся к данным
+продукта. Гуглите). Вам нужно описать полностью объект и продублировать его для
+всех карточек и после импортировать в homework-10 для дальнейшей работы с ним.
+*/
+
+// Задача 3
+/*Создание шаблона:
+По аналогии с лекцией создайте и реализуйте шаблон (template) для продуктовых карточек. (Обратите внимание на задание 5, чтобы сделать всё правильно).
+*/
+
+const productCardTemplate = document.getElementById('product-card-template')
+const productCard = document.querySelector('.product-card')
+
+// Задача 4
+/*Работа с данными (метод reduce):
+Используя метод массива .reduce(), получите новый объект (или массив), где ключом будет название продукта, а значением — его описание.
+*/
+
+let allProducts = productCards.reduce(function (acc, product) {
+  acc.push({
+    title: product.title,
+    description: product.description
+  });
+  return acc;
+}, []);
+console.log(allProducts);
+
+
+// Задача 5
+/*Интерактивность (со звёздочкой, повышенной сложности):
+Реализуйте функцию, которая при загрузке страницы показывает сообщение через prompt: "Сколько карточек отобразить? От 1 до 5".
+В зависимости от введённого числа (1–5) — отобразите на странице соответствующее количество карточек.
+Обязательно: Добавьте защиту от ввода других значений (пустых строк, букв, чисел вне диапазона) с помощью проверки if.
+Структура: У вас должно быть две функции:
+Одна — запрашивает и возвращает количество карточек (с проверкой).
+Вторая — принимает массив данных и отрисовывает (рендерит) нужное количество карточек.
+Важно: Визуально карточки не должны измениться — всё должно выглядеть так же, как и раньше.
+ */
+
+function getCardCount() {
+  let userInput = prompt('Сколько карточек отобразить? От 1 до 5', [1]);
+  console.log(userInput);
+
+  const quantity = Number(userInput);  //преобразуем в число (все что принимает prompt форматируется в строку, даже числа)
+  console.log(Number.isNaN(quantity));  //false если введено число
+
+  if (isNaN(quantity) || quantity < 1 || quantity > 5) {  //проверяем получили ли число и в диапазоне ли он от 0-5
+    alert('Введите число от 1 - 5!');
+    return getCardCount();
+  } else {
+    return quantity;
+  }
+
+
+}
+const cardsCount = getCardCount();
+console.log(cardsCount);
+
+// Рендерим карточки
+const cardTemplate = document.getElementById('product-card-template');
+const productList = document.querySelector('.products-list');
+
+function renderCards(cardsCount) {
+  const rendering = productCards.slice(0, cardsCount).forEach((card) => {
+    const productClone = cardTemplate.content.cloneNode(true);
+    productClone.querySelector('.product-card__img').src = card.img
+    productClone.querySelector('.product-card__label').textContent = card.label
+    productClone.querySelector('.product-card__title').textContent = card.title
+    productClone.querySelector('.product-card__description').textContent = card.description
+    productClone.querySelector('.price__value').textContent = card.price
+
+    const componentList = productClone.querySelector('.product-card__component-list');
+    card.components.forEach((component) => {
+      const li = document.createElement('li');
+      li.textContent = component
+      componentList.appendChild(li);
+    })
+    productList.appendChild(productClone);
+    console.log(productClone);
+  });
+}
+const render = renderCards(cardsCount);
+
+
+====================================================================================
+ФАЙЛ: homework-11.js
+====================================================================================
+ИМЯ: homework-11.js
+РАСШИРЕНИЕ: .js
+РАЗМЕР: 7,46 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+// Задача 4.
+// К Форме, которая прикреплена в футере - добавить логику:
+// email должен соответствовать стандартам (добавить валидацию), если он не заполнен - 
+// форма не отправляется. Кнопка "Подписаться" и есть "отправкой формы", при нажатии на 
+// которую мы будем выводить консоль лог в виде объекта: { email: 'введенная почта' }
+// Уровень 1:
+// 1.
+// Создаем файл, все как прошлых дз.
+
+// 2.
+// Почитать про теги: label, form, input (источники прикреплены в конце ДЗ)
+
+// 3.
+// Сверстать данный footer, используя семантические теги (footer, nav и т.д.)
+
+// 4.
+// К Форме, которая прикреплена в футере - добавить логику:
+
+// email должен соответствовать стандартам (добавить валидацию), если он не заполнен - форма не отправляется. Кнопка "Подписаться" и есть "отправкой формы", при нажатии на которую мы будем выводить консоль лог в виде объекта: { email: 'введенная почта' }
+
+// Уровень 2:
+// Немного теории:
+
+// Модальное окно — это всплывающее окно, которое появляется поверх всей страницы и блокирует взаимодействие с остальным интерфейсом, пока пользователь не выполнит в нём какое-то действие (например, нажмёт кнопку, заполнит форму, закроет окно).
+
+// 5.
+// Создать кнопку "Регистрация". Создать модальное окно, используя классы "modal, modal-showed". Логика такая: при нажатии на кнопку у нас открывается модальное окно путем добавления modal-showed к div с классом modal. Не забываем добавить кнопку для закрытия модалки (крестик в углу).
+
+// Важные правила создания модалки:
+
+// 1.
+// Задний фон должен быть затемнён, но не полностью черный (Создаем класс overlay, который будет затемнять всю страницу)
+
+// 2.
+// Модальное окно находиться ровно по центру страницы, независимо от масштаба
+
+// Создать форму для регистрации внутри модального окна. Она должна содержать поля: имя, фамилия, дата рождения, логин, пароль, повторение пароля. Используйте для того, что бы указать пользователю, какое поле за что отвечает. Также важно использовать placeholder (обо всем этом можно будет почитать в документации в конце поста) Разрешается добавить поля на ваше усмотрение. Все поля должны иметь валидацию. Если пользователь ввел два разных пароля или форма невалидна (используем метод checkValidity()) - мы должны предупредить его о том, что регистрация отклонена. Если регистрация успешна - выводим значения формы в лог, как в задании №4. Дополнительно мы должны добавить к этому объекту свойство createdOn и указать туда время создания (используем сущность new Date()). Также создайте внешнюю переменную user и присвойте ей этот объект. После успешной регистрации - модалка должны закрыться.
+const emailForm = document.getElementById('subscribe-form');
+emailForm.addEventListener('submit', (event) => {
+  event.preventDefault()
+  const form = event.target;
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  if (form.checkValidity()) {
+    console.log("Вы подписались на наши акции!");
+    console.log(data);
+  }
+})
+
+
+const modal = document.getElementById('modal');
+const openModalBtn = document.getElementById('modal__btn-open');
+const closeModalBtn = document.getElementById('close-modal');
+
+openModalBtn.addEventListener('click', (event) => {
+  event.preventDefault();     // отменяю действие перехода по сылке
+  modal.classList.add('modal-showed');     // добавляю класс
+});
+closeModalBtn.addEventListener('click', () => {
+  modal.classList.remove('modal-showed');     // удаляю добавленный класс при закрытии окна нажав Х в углу
+});
+
+console.log(openModalBtn);
+
+
+let user;
+
+// Форма регистрации в модальном окне
+const regForm = document.getElementById('register-form');
+regForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const form = event.target;
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());      //сохраняем введенные данные юзера
+  if (form.checkValidity() && password.value === passwordRepeat.value) {
+    password.value.btoa
+    passwordRepeat.value.btoa
+    data.createdOn = new Date();     //добавляем дату регистрации
+    user = data;      //сохраняем данные юзера во внешнюю "let user"
+    console.log('Вы успешно зарегистрировались!')
+    console.log(data);
+    modal.classList.remove('modal-showed');     // удаляю добавленный класс модалки, чтобы при успешном регистрации модалка закрывалась
+  } else {
+    form.reportValidity();
+    console.log('Вы ввели неккоректные данные!')
+  }
+});
+
+// Проверка пароля
+const password = document.getElementById('password');
+const passwordRepeat = document.getElementById('passwordRepeat');
+
+function checkPassword(inputPassword, inputPasswordRepeat) {
+  if (inputPassword === '' && inputPasswordRepeat === ''
+    || inputPassword === inputPasswordRepeat) {
+    password.classList.remove('error')
+    passwordRepeat.classList.remove('error')
+  }
+
+  if (inputPassword !== inputPasswordRepeat) {
+    password.classList.add('error')
+    passwordRepeat.classList.add('error')
+    console.log('Пароли НЕ совпадают или пусты');
+  }
+
+};
+
+password.addEventListener('input', (event) => {
+  checkPassword(event.target.value, passwordRepeat.value)
+});
+
+passwordRepeat.addEventListener('input', (event) => {
+  checkPassword(password.value, event.target.value)
+});
+
+
+
+
+
+
+
+
+====================================================================================
+ФАЙЛ: homework-7.js
+====================================================================================
+ИМЯ: homework-7.js
+РАСШИРЕНИЕ: .js
+РАЗМЕР: 1,46 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+// Задание 3
+let city = 'Грозный';
+let temperature = 30;
+function displayCityTemperature(city, temperature) {
+  console.log(`Сейчас в ${city} температура ${temperature} градусов по Цельсию`);
+}
+
+displayCityTemperature(city, temperature)
+
+// Задание 4
+const LIGHT_SPEED = 299792458;
+function logLightSpeed(speed) {
+  if (speed > LIGHT_SPEED) {
+    console.log('Сверхсветовая скорость');
+  } else if (speed === LIGHT_SPEED) {
+    console.log('Скорость света');
+  }  else {
+    console.log('Субсветовая скорость');
+  }
+}
+
+logLightSpeed(399792458);    // Сверхсветовая скорость
+logLightSpeed(199792458);    // Субсветовая скорость
+logLightSpeed(299792458);    //Скорость света
+
+// Задание 5
+let apple = 'Яблоки Голден';
+let buyProduct = 150;
+
+function budget(calculation) {
+  if (buyProduct <= calculation) {
+    console.log(`Товар ${apple} приобретён. Спасибо за покупку!`);
+  } else {
+    console.log(`Вам не хватает ${buyProduct - calculation}$, пополните баланс`);
+  }
+}
+
+budget (200);
+budget (100);
+
+// Задание 6
+function myName(name) {
+  console.log(name);
+}
+myName("Мухаммад");
+
+// Задание 7
+const myLastName = 'Усманов';
+let age = 32;
+let currentCity = 'Грозный';
+
+
+====================================================================================
+ФАЙЛ: homework-8.js
+====================================================================================
+ИМЯ: homework-8.js
+РАСШИРЕНИЕ: .js
+РАЗМЕР: 9,00 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+// Задание 3
+/* Создайте объект на основе ваших данных. Имя, фамилия, почта, работа, должность,
+возраст, страна, город, статус отношений и так далее. Чем больше - тем лучше
+(но не увлекайтесь, до 10 максимум). Подберите правильное название для переменной. */
+
+const user = {
+  name: "Мухаммад",
+  lastName: "Усманов",
+  email: "mahomet1994@gmail.com",
+  profession: "ИТ",
+  position: "Разработчик",
+  age: 32,
+  country: "Россия",
+  city: "Грозный",
+  relationshipStatus: "Женат"
+}
+
+console.log(user);
+
+// Задание 4
+/*Создайте объект, который будет хранить данные об автомобиле (марка, модель, год выпуска, цвет, вид
+коробки). Добавьте дополнительное свойство - владелец авто, значением которого будет ОБЪЕКТ, описанный
+в пункте №3. Желательно добавлять отдельной строкой (имеется ввиду не при создании объекта) */
+
+const car = {
+  brand: "Toyota",
+  model: "Camry",
+  year: 2025,
+  color: "black",
+  transmission: "automatic",
+}
+
+car.carOwner = user;
+
+console.log(car);
+
+// Задача 5
+/* Написать функцию которая аргументом будет принимать объект, описанный в пункте №4.
+Она проверяет,есть ли в объекте свойство "максимальная скорость", если нет - добавляет
+его и задает значение, если есть - прекращает выполнение (ничего не делает) */
+
+function setMaxCarSpeed(carObj, maxSpeed) {
+  if (Object.hasOwn(carObj, "maxSpeed")) {
+    return;
+  } else {
+    carObj.maxSpeed = "200км/ч"}
+}
+
+setMaxCarSpeed(car, "200км/ч");      // передаем в параметрах только объект и значение, которое хотим добавить
+
+
+if (!Object.hasOwn(car, "maxSpeed")) {
+  car.maxSpeed = "200км/ч"
+}
+
+
+console.log(car);
+
+if (!Object.hasOwn(car, 'minSpeed')) {
+  car.minSpeed = '0км/ч'
+}
+  console.log(car);
+  
+// Задача 6
+/* Написать функцию, которая получает первым аргументом — объект, а вторым
+аргументом — свойство объекта, которое нужно вывести и выводит его значение. */
+
+function showObjProperty (car, model) {     // вызываю функцию, именую ее, в скобках указываю параметры: car- сюда падает обект. и имя его свойства (ключа) model - сюда попадает имя свойства в виде строки
+  console.log(car[model])     // обращаюсь к консоле чтобы она вывела именно значение свойства model из объекта car
+}
+showObjProperty(car, 'model')     // вызываю функцию и передаю ей ссылку на 1й аргумент - объект car, строку model как 2й аргумент - имя свойства в ковычках, чтобы функция знала что вывести
+
+//  Задача 7
+// Создать массив, который содержит названия продуктов (просто строки)
+
+const fruits = ["яблоко", "груша", "апельсин", "банан"]
+
+// Задача 8
+/* Создать массив, состоящий из объектов, где объект представляет собой книгу (название, автор,
+год выпуска, цвет обложки, жанр) (3-5 книг). После, используя известный нам метод массив, добавить
+еще одну книгу в конец списка. Можете заменить книги на фильмы, или другую сущность, идею вы поняли.*/
+
+const books = [
+  {
+    title: "Война и мир",
+    author: "Лев Толстой",
+    year: 1869,
+    coverColor: "зеленый",
+    genre: "роман-эпопея",
+  },
+  {
+    title: "Преступление и наказание",
+    author: "Федор Достоевский",
+    year: 1866,
+    coverColor: "красный",
+    genre: "роман",
+  },
+  {
+    title: "Мастер и Маргарита",
+    author: "Михаил Булгаков",
+    year: 1967,
+    coverColor: "черный",
+    genre: "мистичемкий роман",
+  },
+];
+
+books.push(     //добавляем новую книгу в конец массива
+  {
+    title: 'Тихий Дон',
+    author: 'Михаил Шолохов',
+    year: 1928,
+    coverColor: 'серый',
+    genre: 'роман-эпопея'
+  }
+);
+
+console.log(books)
+
+// Задача 9
+/* Создать еще один массив, состоящих из тех же книг, но относящийся к определенной вселенной
+(Гарри Поттер, Марвел и так далее). (Если используете другую, свою сущность - импровизируйте).
+С помощью известного нам метода массива или оператора (рекомендую использовать оператор),
+объединить эти два массива в один */
+
+const harryPotterBooks = [
+  {
+    title: "Гарри Поттер и философский камень",
+    author: "Джоан Роулинг",
+    year: 1997,
+    coverColor: "фиолетовый",
+    genre: "фэнтези",
+  },
+  {
+    title: "Гарри Поттер и тайная комната",
+    author: "Джоан Роулинг",
+    year: 1998,
+    coverColor: "ксиний / голубой",
+    genre: "фэнтези",
+  },
+  {
+    title: "Гарри Поттер и узник Азкабана",
+    author: "Джоан Роулинг",
+    year: 1999,
+    coverColor: "зеленый",
+    genre: "фэнтези",
+  },
+  {
+    title: "Гарри Поттер и Кубок огня",
+    author: "Джоан Роулинг",
+    year: 2000,
+    coverColor: "желтый",
+    genre: "фэнтези"
+  },
+  {
+    title: "Гарри Поттер и Орден Феникса",
+    author: "Джоан Роулинг",
+    year: 2003,
+    coverColor: "синий",
+    genre: "фэнтези"
+  }
+];
+
+const allBooks = [...books, ...harryPotterBooks];     // склеиваем два массива
+
+console.log(allBooks);
+
+
+// Задача 10
+/* Почитать про метод массива — map. Написать функцию, которая принимает массив сущностей
+с задания №9. Добавляем новое свойство для объекта "isRare (это редкий)" и в зависимости от
+года выпуска книги (или какой-то логики, связанной с вашей сущностью), устанавливаем true или
+false. Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true
+(да, это редкий), нет - false (значит это не редкий). */
+
+const newArray = allBooks.map(function(book) {      // добавляем свойство isRare
+  if (Object.hasOwn(book, "isRare")) {      // через "Object" вызываем его встроенный метод "hasOwn" для проверки: Если у объекта book есть своё собственное свойство "isRare", то...
+    return book;      // если свойство уже есть, возвращаем книгу без изменений
+  }
+
+  const bookCopy = { ...book }     // создаем копию книг поштучно
+  if (bookCopy.year > 2000) {      // если год больше 2000 возврашаем true
+    bookCopy.isRare = true;
+  } else {
+    bookCopy.isRare = false;
+  }
+  return bookCopy;     // возвращаем измененную копию книги в новый массив поштучно
+});
+console.log(newArray)
+
+// Задача 10 без if/else
+const newArray2 = allBooks.map(function(newBook){
+  if (Object.hasOwn(newBook, "isRare")) {
+    return newBook;
+  }
+  return {
+    ...newBook,
+    isRare: newBook.year > 2000,
+  }
+});
+
+console.log(newArray2)
+
+// Задача 10 без if/else v-2
+const updatedBooks = allBooks.map(currentBook => {
+  return {
+    ...currentBook, isRare: currentBook.year > 2000
+  }
+});
+console.log(updatedBooks)
+
+
+====================================================================================
+ФАЙЛ: homework-9.js
+====================================================================================
+ИМЯ: homework-9.js
+РАСШИРЕНИЕ: .js
+РАЗМЕР: 10,85 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+// Задача 2
+// Создать массив чисел от 1 до 10. Отфильтровать его таким образом, что бы мы получил массив чисел, начиная с 5.
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const numbersFilter = numbers.filter(function(value){
+  return value >= 5;
+});
+console.log(numbersFilter);
+
+// стрелочная функция
+const filteredNumbers = numbers.filter(value => {
+  return value >= 5;
+});
+console.log(filteredNumbers);
+
+// Задача 3
+// Создать массив строк, относящихся к любой сущности (название фильмов/книг, кухонные приборы, мебель и т.д.), проверить, есть ли в массиве какая-то определенная сущность.
+const catalog = [
+  {
+    title: 'Увлажняющий мусс',
+    price: 2750
+  },
+  {
+    title: 'Увлажняющая маска',
+    price: 3500
+  },
+  {
+    title: 'Гель для умывания',
+    price: 1650
+  }
+];
+const mask = catalog.find(value => {
+  return value.title === 'Гель для умывания';
+})
+console.log(mask);
+
+// Задача 4
+// Написать функцию, которая аргументом будет принимать массив и изменять его порядок на противоположный ("переворачивать") . Два вышеуказанных массива с помощью этой функции перевернуть.
+// перевернул без функции
+const resultNumbers = [...numbers].reverse();
+console.log(resultNumbers);
+const resultCatalog = [...catalog].reverse();
+console.log(resultCatalog);
+
+//делаем то же самое но уже не меняя исходный массив, а возврашая новый перевернуты
+const resultNumbers2 = numbers.toReversed();
+console.log(resultNumbers2);
+const resultCatalog2 = catalog.toReversed();
+console.log(resultCatalog2);
+
+//переворачиваю через функцию
+function reversArr(arr, array) {      // создал функцию именовал ее, параметром которая будет принимать аргументы именовал как "arr"
+  const copy = [...arr, ...array];     // сохраняем копию того, что придет в параметр ф-ии в переменной "copy" (оригинал приходит, еще не перевернутый)
+  return copy.reverse();     // переворачиваем сохраненную копию и выбрасывет наружу
+}
+// обязательно вызываю функцию и кладу туда аргументом массив "numbers" и "catalog" чтобы код заработал. а в "reversArr"(имя которое я дал ф-ии) подхватывает то что выбросил наружу "return"
+const reversedNumbers = reversArr (numbers, catalog);
+// const reversedCatalog = reversArr (catalog);
+//после уже выводим в консоль
+console.log(reversedNumbers);
+// console.log(reversedCatalog);
+
+// Задача 5
+/* Добавить файл comments.js, в нём создать константу и в него поместить первые 10 объектов
+этого массива. Данный массив представляет собой пример комментариев в соц. сетях, поэтому
+переменная должна быть названа по смыслу. Не забудьте удалить квадратные кавычки у ключей
+объектов (можно использовать Chat GPT, что бы не делать это вручную) */
+
+// Задача 6
+// Сделать константу экспортируемой, добавив перед "const" ключевое слово "export". Таким образом мы сможем внедрить переменную из comments.js в homework-9.js и работать с ней. Когда мы введем название переменной, нам предложит импортировать ее - так и делаем.
+import {comments} from './comments.js'
+
+// Задача 7
+// Вывести в консоль массив тех комментариев, почта пользователей которых содержит ".com"
+const resultComment = [];
+for (let i = 0; i < comments.length; i++) {     // проходимся по массиву "comments" (let i = 0)старт с 0 индекса. (i < массив.length) Условие: пока индекс меньше длины массива продолжаем проверку. (i++) после каждой итерации увеличиваем (i)индекс на 1. т.е проверил 0 индекс, увеличиваем индекс старта на 1 единицу и так до последнего
+  if (comments[i].email.includes('.com')) {     //если в массиве "comments" по индексу в свойствах email содержится значение которое вкл в себя .com
+    resultComment.push(comments[i]);      // добавляем этот объект в конец переменной resultComment
+  };
+}
+console.log(resultComment);
+/* сделать через фильтрацию, если массив коммент вкл в себя
+com сохр в перем и потом можно вывести в консоль */
+const result = comments.filter(value => {     //фильтр берет каждый объект массива "comments" и передает в ф-ию value и ждет указаний
+  return value.email.includes('.com')     // смотрим в каждом объекте, вкл ли в себя свойство email значение которое содержит ".com" и если такие есть возвращает в параметр ф-ии "value"
+});
+console.log(result);
+//можно и без return, принцип тот же (а если в comments.email.includes добавить знак "?" (Optional Chaining), то не будут ошибки при отсутствии свойства email, код продолжит работать)
+const resultRewievs = comments.filter(comment => comment.email.includes ('.com'));
+console.log(resultRewievs);
+
+// решение через пустую ф-ию
+const callBack = (comment) => {
+  return comment.email.includes('.com');
+}
+console.log(comments.filter(callBack));
+
+//проверяем есть содержит ли ".com" в массиве объекта под индексом "0"
+callBack(comments[0]);     //простой вызов ф-ии, результат никуда не сохраняется
+  const result1 = callBack(comments[0]);     //вызов ф-ии с сохранением в переменную, результат сохраняется в result1 - будет true или false
+console.log(callBack(comments[0]));     //вызов ф-ии через консоль и вывод результата
+
+const resultRewievs1 = comments.filter(callBack);     // передал функцию из 92строчки в "comments.filter"
+console.log(resultRewievs1);
+
+// Задача 8
+/* Перебрать массив таким образом, что бы пользователи с id меньше или равно 5
+имели postId: 2, а те, у кого id больше 5, имели postId: 1 */
+
+// const users = {...comments}
+const users = comments.map(comment => {
+  if (comment.id <= 5) {
+    comment.postId = 2
+  } else {
+    comment.postId = 1
+  }
+  return comment
+});
+console.log(users);
+
+// делаем тоже самое без if/else
+const user1 = comments.map((comment, postId) => {
+  return {...comment, postId: comment.id <= 5 ? 2: 1}
+})
+console.log(user1);
+
+// делаем тоже самое return
+const user2 = comments.map((comment) => ({
+  ...comment,
+  postId: comment.id <= 5 ? 2: 1
+}));
+console.log(user2);
+
+// Задача 9
+// Перебрать массив, что бы объекты состояли только из айди и имени
+const userName = comments.map(comment => {
+  return {
+    id: comment.id,
+    name: comment.name
+  }
+});
+console.log(userName);
+
+// Задача 10
+/* Перебираем массив, добавляем объектам свойство isInvalid и проверяем: если длина тела
+сообщения (body) больше 180 символов - устанавливаем true, меньше - false. */
+const commentsArr = comments.map(comment => {
+  return {
+    ...comment,
+    isInvalid: comment.body.length > 180
+  }
+});
+console.log(commentsArr);
+
+// Задача 11
+/* Почитать про метод массива reduce. Используя его, вывести массив почт и провернуть
+тоже самое с помощью метода map */
+let allEmail = comments.reduce(function(acc, comment) {
+  acc.push(comment.email);
+  return acc
+}, []);
+console.log(allEmail);
+
+// тоже самое с помощью метода map
+let allEmail2 = comments.map(function(comment) {
+  return comment.email
+});
+console.log(allEmail2);
+
+// то же самое через стрелочную ф-ию
+let allEmail3 = comments.map(comment => comment.email);
+console.log(allEmail3);
+
+// Задача 12
+/* Почитать про методы toString(), join() и перебрав массив с задания №11,
+привести его к строке. */
+let allEmail4 = comments.reduce((acc, comment) => {
+  return [acc] + comment.email + ', ';
+}, '' );
+console.log(allEmail4);
+
+//Задача 13
+// Создать ф-ию которая принимает 1-м арг число и возвр true если четно и false если нечетное
+
+function isEven(num) {
+  if(num % 2 === 0) {
+    return true;
+  }
+  return false;
+}
+console.log(isEven(2));
+
+function isEven2(num) {
+  return num % 2 === 0;
+}
+console.log(isEven2(2));
+
+const isEven3 = (num) => num % 2 === 0;
+console.log(isEven3(2));
+
+
+const isEven4 = (num) => {
+  const result = num % 2 === 0;
+  console.log(result);
+  return result;
+}
+isEven4(2)
+
+/*Задача 13.1
+перебрать массив чисел в массив объекта, в котором число будет храниться
+по ключу value и в свойстве isEven будет храниться true или false если число четное 
+или нечетное */
+const numbers1 = [1, 2, 3, 4, 5];
+const numbers2 = numbers1.map(function(num) {
+  return {
+    value: num,
+    isEven: isEven4(num)
+  }
+})
+console.log(numbers2);
+
+
+====================================================================================
+ФАЙЛ: ico\telegram.png
+====================================================================================
+ИМЯ: telegram.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 630 B
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: telegram.png
+Расширение: .png
+Относительный путь: ico\telegram.png
+Размер: 630 B
+
+
+====================================================================================
+ФАЙЛ: ico\vk.png
+====================================================================================
+ИМЯ: vk.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 599 B
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: vk.png
+Расширение: .png
+Относительный путь: ico\vk.png
+Размер: 599 B
+
+
+====================================================================================
+ФАЙЛ: images\botton_add.png
+====================================================================================
+ИМЯ: botton_add.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 326 B
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: botton_add.png
+Расширение: .png
+Относительный путь: images\botton_add.png
+Размер: 326 B
+
+
+====================================================================================
+ФАЙЛ: images\dandelion_bg.png
+====================================================================================
+ИМЯ: dandelion_bg.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 941,13 KB
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: dandelion_bg.png
+Расширение: .png
+Относительный путь: images\dandelion_bg.png
+Размер: 941,13 KB
+
+
+====================================================================================
+ФАЙЛ: images\photo_1.jpg
+====================================================================================
+ИМЯ: photo_1.jpg
+РАСШИРЕНИЕ: .jpg
+РАЗМЕР: 21,84 KB
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: photo_1.jpg
+Расширение: .jpg
+Относительный путь: images\photo_1.jpg
+Размер: 21,84 KB
+
+
+====================================================================================
+ФАЙЛ: images\photo_1.png
+====================================================================================
+ИМЯ: photo_1.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 111,84 KB
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: photo_1.png
+Расширение: .png
+Относительный путь: images\photo_1.png
+Размер: 111,84 KB
+
+
+====================================================================================
+ФАЙЛ: images\photo_2.png
+====================================================================================
+ИМЯ: photo_2.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 162,76 KB
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: photo_2.png
+Расширение: .png
+Относительный путь: images\photo_2.png
+Размер: 162,76 KB
+
+
+====================================================================================
+ФАЙЛ: images\photo_3.png
+====================================================================================
+ИМЯ: photo_3.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 102,59 KB
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: photo_3.png
+Расширение: .png
+Относительный путь: images\photo_3.png
+Размер: 102,59 KB
+
+
+====================================================================================
+ФАЙЛ: images\photo_4.png
+====================================================================================
+ИМЯ: photo_4.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 177,49 KB
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: photo_4.png
+Расширение: .png
+Относительный путь: images\photo_4.png
+Размер: 177,49 KB
+
+
+====================================================================================
+ФАЙЛ: images\photo_5.png
+====================================================================================
+ИМЯ: photo_5.png
+РАСШИРЕНИЕ: .png
+РАЗМЕР: 224,53 KB
+ТИП: [БИНАРНЫЙ ФАЙЛ]
+
+[БИНАРНЫЙ ФАЙЛ]
+Содержимое бинарного файла не вставляется в текстовый документ.
+Информация о файле сохранена:
+Имя: photo_5.png
+Расширение: .png
+Относительный путь: images\photo_5.png
+Размер: 224,53 KB
+
+
+====================================================================================
+ФАЙЛ: index.html
+====================================================================================
+ИМЯ: index.html
+РАСШИРЕНИЕ: .html
+РАЗМЕР: 8,04 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-sidepanel.css">
+  <link rel="stylesheet" href="style-button.css">
+  <link rel="stylesheet" href="style-footer.css">
+  <link rel="stylesheet" href="style-modal.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Интернет-магазин косметики. Маски, кремы, гели и муссы для бережного ухода за кожей">
+  <meta property="og:title" content="Лучший интернет-магазин косметики">
+  <meta property="og:description" content="Ухаживайте за своей кожей вместе с нами">
+  <meta property="og:image" content="images/photo_1.png">
+  <!-- указать реальный адрес картинки,которую хотим показать в карточке сайте в предпросмотре сайта -->
+  <meta property="og:url" content="index.html"> <!-- указать реальный адрес старницы -->
+  <title>Интернет-магазин косметики</title>
+</head>
+
+<body>
+  <div id="left-sidepanel" class="sidepanel">
+    <button id="change-bgs-card-btn" class="button">Сменить цвет всех карточек</button>
+    <button id="change-bg-card-btn" class="button">Сменить цвет карточки</button>
+    <button id="open-google" class="button">открыть Google</button>
+    <button id="btn-change-color" class="button--active button">Кнопка смены цвета</button>
+    <button id="output-console-log" class="button">Вывести сообщение в консоль лог</button>
+  </div>
+  <div class="container">
+    <h1 class="container__title">Выбери свой продукт</h1>
+    <ul class="products-list">
+      <!-- Карточки генерируем через JS -->
+    </ul>
+
+    <template id="product-card-template">
+      <li class="product-card">
+        <img class="product-card__img" src="" alt="" width="290" height="245" />
+        <span class="product-card__label"></span>
+        <h2 class="product-card__title"></h2>
+        <p class="product-card__description"></p>
+        <span class="product-card__compound">Состав: </span>
+        <ul class="product-card__component-list">
+        </ul>
+        <div class="product-card__price-block">
+          <div class="product-card__price price">
+            <b>Цена</b>
+            <span class="price__value"></span>
+          </div>
+          <button class="product-card__button button">
+            <img src="images/botton_add.png" width="16" height="16" alt="+">
+            <span class="button__text">Купить</span>
+          </button>
+        </div>
+      </li>
+    </template>
+
+  </div>
+
+  <!-- Подвал сайта -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__container-main">
+        <div class="footer__brand-wrapper"> <!-- Левая часть -->
+          <p class="footer__brand">Product Cards</p>
+          <p class="footer__slogan">У Нас Самые Лучшие Продукты Для Кожи!</p>
+          <div class="footer__ico">
+            <img class="footer__ico-tg" src="ico/telegram.png" alt="наш tg">
+            <img class="footer__ico-vk" src="ico/vk.png" alt="наш vk">
+          </div>
+        </div>
+
+        <div class="footer__form-wrapper">
+          <form class="footer__form" id="subscribe-form"> <!-- Центральная часть -->
+            <p class="footer__offer">Подпишись на наши акции:</p>
+            <div class="footer__input-container">
+              <input class="footer__input" placeholder="Введите Email..." name="email" type="email" required>
+              <button class="footer__button" type="submit">Подписаться</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="footer__menu-wrapper">
+          <nav class="footer__menu"> <!-- Правая часть -->
+            <p class="footer__menu-title">Быстрые ссылки</p>
+            <ul class="footer__menu-list">
+              <li class="footer__menu-item"><a href="">Главная</a></li>
+              <li class="footer__menu-item"><a href="">Магазин</a></li>
+              <li class="footer__menu-item"><a href="">контакты</a></li>
+              <li class="footer__menu-item"><a href="" id="modal__btn-open">Регистрация</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <p class="footer__copyright">www.product-cards.com © all right reserve</p>
+    </div>
+  </footer>
+
+  <!-- Модальное окно -->
+  <div id="modal" class="modal overlay">
+    <div class="modal-content">
+      <span id="close-modal" class="close-button">&times;</span>
+      <h2>Регистрация</h2>
+      <form class="modal__form" id="register-form">
+        <div class="modal__input-container">
+          <label class="modal__label">
+            <span class="modal__label-text">Имя</span>
+            <input class="modal__input" placeholder="Введите имя..." name="name" type="text" required autofocus>
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Фамилия</span>
+            <input class="modal__input" placeholder="Введите фамилию..." name="lastName" type="text" required>
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Отчество</span>
+            <input class="modal__input" placeholder="Введите отчество..." name="surname" type="text">
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Дата рождения</span>
+            <input class="modal__input" placeholder="Введите дату рождения..." name="birthDate" type="date" required>
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Логин</span>
+            <input class="modal__input" placeholder="Введите логин..." name="login" type="text" required minlength="4">
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Пароль</span>
+            <input class="modal__input" id="password" placeholder="Введите пароль..." name="password" type="password" required
+              minlength="4">
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Повторите пароль</span>
+            <input class="modal__input" id="passwordRepeat" placeholder="Введите повторение пароля..." name="passwordRepeat" type="password"
+              required>
+          </label>
+          <label class="modal__label">
+            <span class="modal__label-text">Email</span>
+            <input class="modal__input" placeholder="Введите Email..." name="email" type="email" required>
+          </label>
+          <button class="modal__button" id="modal__btn-reg" type="submit">Зарегистрироваться</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Скрипты -->
+  <script src="script-sidepanel.js"> </script>
+  <script src="script.js"> </script>
+  <script src="homework-7.js"> </script>
+  <script src="homework-8.js"> </script>
+  <script type="module" src="homework-9.js"> </script>
+  <script type="module" src="homework-10.js"> </script>
+  <script type="module" src="homework-11.js"> </script>
+  <!-- <script src="test-scripts.js"> </script> -->
+
+</body>
+
+</html>
+
+
+====================================================================================
+ФАЙЛ: product-cards.js
+====================================================================================
+ИМЯ: product-cards.js
+РАСШИРЕНИЕ: .js
+РАЗМЕР: 2,16 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+export const productCards = [
+  {
+    id: 1,
+    img: 'images/photo_1.png',
+    label: 'для нормальной кожи',
+    title: 'Увлажняющий мусс',
+    description: 'Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой.',
+    components: [
+      'активные натуральные комплексы',
+      'витамины С, А, РР, В И Е',
+      'солнцезащитные компоненты'
+    ],
+    price: 2750,
+  },
+  {
+    id: 2,
+    img: 'images/photo_2.png',
+    label: 'для нормальной кожи',
+    title: 'Увлажняющая маска',
+    description: 'Способствует удерживанию влаги в верхних слоях кожи.',
+    components: [
+      'воски',
+      'минералы',
+      'масла'
+    ],
+    price: 3500,
+  },
+  {
+    id: 3,
+    img: 'images/photo_3.png',
+    label: 'для нормальной кожи',
+    title: 'Гель для умывания',
+    description: 'Интенсивно очищает, не повреждает защитный барьер кожи.',
+    components: [
+      'минералы',
+      'витамины С, А, РР, В И Е',
+      'солнцезащитные компоненты'
+    ],
+    price: 1650,
+  },
+  {
+    id: 4,
+    img: 'images/photo_4.png',
+    label: 'для нормальной кожи',
+    title: 'Подарочный набор №1',
+    description: 'Набор, состоящий из увлажняющего крема и маски.',
+    components: [
+      'воски',
+      'минералы',
+      'масла'
+    ],
+    price: 4750,
+  },
+  {
+    id: 5,
+    img: 'images/photo_5.png',
+    label: 'для нормальной кожи',
+    title: 'Подарочный набор №5',
+    description: 'Весь набор средств Invisible symphony, крем, маска, мусс и гель для умывания.',
+    components: [
+      'воски',
+      'минералы',
+      'масла'
+    ],
+    price: 7520,
+  },
+]
+
+console.log(productCards)
+
+
+====================================================================================
+ФАЙЛ: script.js
+====================================================================================
+ИМЯ: script.js
+РАСШИРЕНИЕ: .js
+РАЗМЕР: 2,05 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+// Покраска всех карточек
+const productCards = document.querySelectorAll('.product-card');
+const changeColorCardsButton = document.querySelector('#change-bgs-card-btn');
+const orangeColorHash = '#FF7700';
+const goldColorHash = '#FFD900';
+
+changeColorCardsButton.addEventListener('click', () => {
+  const productCards = document.querySelectorAll('.product-card');
+  productCards.forEach((card) => card.style.backgroundColor = orangeColorHash);
+});
+
+// Покраска первой карточки
+const changeColorCardButton = document.querySelector('#change-bg-card-btn');
+
+changeColorCardButton.addEventListener('click', () => {
+  const firstProductCard = document.querySelector('.product-card');
+  firstProductCard.style.backgroundColor = goldColorHash;
+});
+
+// Открыть google
+const openGoogleButton = document.querySelector('#open-google');
+
+openGoogleButton.addEventListener('click', openGoogle);
+
+function openGoogle() {
+  const answer = confirm('Вы действительно хотите открыть Google?');
+
+  if (answer === true) {
+    window.open('https://google.com');
+  }
+  else {
+    return;
+  }
+}
+
+// Вывод консоль лог
+const outputLogButon = document.querySelector('#output-console-log');
+outputLogButon.addEventListener('click', () => {
+  outputConsoleLog('ДЗ №6');
+});
+function outputConsoleLog(message) {
+  alert('Вывести в консоль?');
+  console.log(message);
+}
+
+// Вывод в консоль содержимое заголовка
+const mainTitle = document.querySelector('.container__title');
+mainTitle.addEventListener('mouseenter', (event) => {
+  console.log(event.target.textContent);
+});
+
+// Кнопка меняющая цвет
+const btnChangeColor = document.querySelector('#btn-change-color');
+btnChangeColor?.addEventListener('click', function () {
+  btnChangeColor.classList.toggle('button--active');
+  const isClassActive = btnChangeColor.classList.contains('button--active');
+  console.log('Кнопка нажата', isClassActive);
+});
+
+
+====================================================================================
+ФАЙЛ: style.css
+====================================================================================
+ИМЯ: style.css
+РАСШИРЕНИЕ: .css
+РАЗМЕР: 2,03 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #515076;
+}
+.container {
+  background-image: url(images/dandelion_bg.png);
+  background-size: 71%;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  margin: 0px auto;
+  max-width: 1110px;
+}
+.container__title {    /*Заголовок*/
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 78px;
+  text-align: center;
+  margin: 0;
+  padding-top: 220px;
+  padding-bottom: 110px;
+}
+
+@media (max-width: 1024px) {      /*для планшетов */
+  .container__title {
+    font-size: 60.2px;
+    line-height: 67.08px;
+    padding-top: 189.2px;
+    padding-bottom: 94.6px;
+  }
+  .container {
+    background-size: 70%;
+  }
+
+}
+
+@media (max-width: 768px) {      /*для телефонов */
+  .container__title {
+    font-size: 30.15px;
+    line-height: 33.54px;
+    padding-top: 94.5px;
+    padding-bottom: 47.3px;
+  }
+  .container {
+    background-size: 50%;
+  }
+
+}
+.products-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  gap: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product-card__title {
+  font-size: 20px;
+}
+.product-card {
+  width: 340px;
+  min-height: 560px;
+  background-color: #F7F7FA;
+  box-shadow: 2px 2px 10px 0px rgba(81, 80, 118, 0.102);
+  padding: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-out;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 10px 10px 18px 0px rgba(81, 80, 118, 0.102);
+ }
+.product-card__component-list {
+  padding-left: 15px;
+}
+.product-card__price-block {
+  margin-top: auto;
+}
+.price {
+  font-size: 20px;
+  display: flex ;
+  justify-content: space-between; /*расположение элементов по ширине с одинаковыми отступами*/
+}
+.product-card__price {
+  margin-top: 56px;
+  margin-bottom: 30px;
+}
+.product-card__button {
+  margin: 0px auto;
+}
+
+
+====================================================================================
+ФАЙЛ: style-button.css
+====================================================================================
+ИМЯ: style-button.css
+РАСШИРЕНИЕ: .css
+РАЗМЕР: 1,08 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+.button {
+  font-family: Montserrat;
+  width: 102px;
+  min-height: 31.62px;
+  border-width: 2px;
+  border-radius: 6px;
+  border-color: #464F6029;
+  background-color: #FFFFFF;
+  color: #464F60;
+  display: flex;
+  gap: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  letter-spacing: 2%;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0px 0px 0px 1px rgba(70, 79, 96, 0.161),
+  0px 1px 1px 0px rgba(0, 0, 0, 0.102);
+  transition: all 0.3ms;
+}
+.button:hover {
+  box-shadow: 0px 0px 0px 1px rgba(71, 80, 98, 0.322),
+  0px 1px 1px 0px rgba(0, 0, 0, 0.102);
+  color: #171C26;
+}
+.button:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 4px rgba(79, 219, 138, 0.2),
+  0px 0px 0px 1px rgba(71, 80, 98, 0.322),
+  0px 1px 1px 0px rgba(0, 0, 0, 0.102);
+  color: #464F60;
+}
+.button:disabled {
+  box-shadow: 0px 0px 0px 1px rgba(70, 79, 96, 0.2);
+  color: #868FA0;
+}
+
+/* Кнопка переключения цвета */
+#btn-change-color {
+  background-color: #0000ff;
+  color: #ffffff;
+}
+
+.button--active {
+  background-color: #15ff00 !important;
+  color: #ffffff;
+}
+
+
+====================================================================================
+ФАЙЛ: style-footer.css
+====================================================================================
+ИМЯ: style-footer.css
+РАСШИРЕНИЕ: .css
+РАЗМЕР: 5,50 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+* {
+  box-sizing: border-box;
+}
+.footer a {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+/* Тело подвала */
+.footer {
+}
+.footer__container {
+  font-family: Montserrat, sans-serif;
+  background: #3A3A3A;
+  max-width: 1728px;
+  min-height: 477px;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  /* overflow-x: hidden; */
+  
+  /* padding-top: 85px; */
+}
+
+/* Тело основной инфы */
+.footer__container-main {
+  padding: 85px 75px 0px 84px;
+  /* margin: 85px 75px 245px 84px; */
+  list-style: none;
+  max-width: 1569px;
+  max-height: 147px;
+  /* opacity: 1; */
+  /* position: relative; */
+  top: 85px;
+  left: 84px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* justify-content: left; */
+  /* border-radius: 10px;
+  border-width: 1px;
+  border: 1px solid #000000 */
+}
+
+/* Левая часть */
+.footer__brand-wrapper {
+  min-width: 409px;
+  min-height: 87px;
+  /* opacity: 1; */
+  top: 85px;
+  left: 84px;
+  overflow-wrap: anywhere;
+}
+.footer__brand {      /* Product Cards */
+  /* width: 214px;
+  height: 43px;
+  angle: 0 deg;
+  top: 85px;
+  left: 84px; */
+
+  font-weight: 800;
+  font-style: ExtraBold;
+  font-size: 28px;
+  /* leading-trim: NONE; */
+  line-height: 154%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+
+
+}
+.footer__slogan {     /* У нас самые лучшие продукты для кожи! */
+  /* width: 409px;
+  height: 28px; */
+  /* angle: 0 deg;
+  top: 144px;
+  left: 84px; */
+
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  /* leading-trim: NONE; */
+  line-height: 154%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+
+
+}
+.footer__ico {
+
+}
+.footer__ico-tg {
+  width: 21px;
+  height: 17.6px;
+  /* angle: 0 deg; */
+  /* opacity: 1; */
+  top: 214px;
+  left: 84px;
+
+}
+.footer__ico-vk {
+  width: 24px;
+  height: 14px;
+  /* angle: 0 deg; */
+  /* opacity: 1; */
+  top: 215.98px;
+  left: 35.5px;
+
+}
+
+/* Центральная часть  */
+.footer__form-wrapper {
+  width: 477px;
+  height: 103px;
+  /* angle: 0 deg; */
+  top: 85px;
+  left: 625px;
+  /* border-radius: 10px;
+  border-width: 1px; */
+
+  /* border: 1px solid rgba(0, 0, 0, 1) */
+}
+.footer__offer {      /* Подпишись на наши акции:*/
+  /* width: 350px;
+  height: 29px;
+  angle: 0 deg; */
+  top: 85px;
+  left: 713px;
+
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 24px;
+  /* leading-trim: NONE; */
+  line-height: 100%;
+  letter-spacing: 0%;
+  
+  text-align: center;
+
+}
+.footer__input-container{
+  max-width: 477px;
+  height: 61px;
+  /* top: 127px; */
+  /* left: 625px; */
+  display: flex;
+  flex-direction: wrap;
+  background: rgba(255, 255, 255, 1);
+  /* border: 1px solid #bc2e2e; */
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  align-items: center;
+
+}
+.footer__input {
+  background: rgba(255, 255, 255, 1);
+  /* width: 100%; */
+  font-size: 16px;
+  /* border: 1px solid #bc2e2e;
+  border-radius: 10px 0 0 10px; */
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+
+
+}
+.footer__input::placeholder {
+  /* width: 101px;
+  height: 17px;
+  angle: 0 deg; */
+  top: 149px;
+  left: 661px;
+
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  /* leading-trim: NONE; */
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  background: rgba(0, 0, 0, 0.75);
+
+}
+.footer__input:hover {
+  border-color: #999999;
+  background-color: #ffffff;
+}
+.footer__input-container:focus-within {
+  background-color: #ffffff;
+  border-color: #0066cc; /* Цвет активной рамки */
+  /* Мягкое свечение вокруг инпута */
+  /* box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15);  */
+}
+.footer__button {
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  background: transparent;
+  /* border-color: rgba(255, 255, 255, 1); */
+  border: none;
+  position: relative;
+
+  
+  /* border-radius: 10px 0 0 10px; */
+  /* border-radius: 0 10px 10px 0; */
+
+}
+.footer__button::before {
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 18px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+/* Правая часть */
+.footer__menu-wrapper {
+  width: 178px;
+  height: 147px;
+  top: 85px;
+  left: 1475px;
+
+}
+
+.footer__menu-title {
+  /* width: 178px;
+  height: 24px;
+  angle: 0 deg;
+  top: 85px;
+  left: 1475px; */
+  padding-bottom: 23px;
+
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.footer__menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  list-style: none;
+  /* top: 132px; */
+  /* left: 0px; */
+
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  /* line-height: 100%; */
+  /* letter-spacing: 0%;  */
+  color: aqua;
+  padding-left: 0;
+
+}
+/* #modal__btn-open {
+
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  padding-left: 0;
+} */
+
+.footer__copyright {
+  margin-top: 180px;
+  margin-bottom: 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.footer__copyright::before {
+  content: "";
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  /* top: 50%; */
+  top: 6px;
+  width: 66px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+
+====================================================================================
+ФАЙЛ: style-modal.css
+====================================================================================
+ИМЯ: style-modal.css
+РАСШИРЕНИЕ: .css
+РАЗМЕР: 1,17 KB
+ТИП: [ТЕКСТОВЫЙ ФАЙЛ]
+
+* {
+  box-sizing: border-box;
+}
+
+.modal {
+  user-select: none;    /* чтобы не нельзя было выделять */
+  display: none;    /* скрываем модальное окно */
+  position: fixed;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  inset: 0;
+  font-size: 12px;
+}
+
+.modal.modal-showed {
+  display: flex;
+  transition:transform 0.3s ease;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  max-width: 340px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 2px 2px 10px 0px rgba(81, 80, 118, 0.102);
+  position: relative;
+}
+
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.modal__button {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #515076;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: black;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.error {
+  border-color: red;
+}
+
+
+====================================================================================
+КОНЕЦ ФАЙЛА
+====================================================================================
