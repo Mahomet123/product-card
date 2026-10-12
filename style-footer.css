@@ -13,7 +13,8 @@
 .footer__container {
   font-family: Montserrat, sans-serif;
   background: #3A3A3A;
-  width: 1728px;
+  width: 100%;
+  max-width: 1728px;
   min-height: 477px;
   color: rgba(255, 255, 255, 1);
   display: flex;
@@ -25,7 +26,8 @@
 /* Тело основной инфы */
 .footer__container-main {
   list-style: none;
-  width: 1569px;
+  width: 100%;
+  max-width: 1569px;
   height: 147px;
   position: relative;
   top: 85px;
@@ -37,7 +39,7 @@
 
 /* Левая часть */
 .footer__brand-wrapper {
-  width: 409px;
+  min-width: 409px;
   height: 87px;
   overflow-wrap: anywhere;
 }
@@ -160,7 +162,7 @@ font-weight: 400;
 /* Правая часть */
 .footer__menu-wrapper {
   width: 178px;
-  height: 147px;
+  min-height: 147px;
   top: 85px;
   left: 1475px;
 
