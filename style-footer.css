@@ -10,12 +10,10 @@
 }
 
 /* Тело подвала */
-.footer {}
-
 .footer__container {
   font-family: Montserrat, sans-serif;
   background: #3A3A3A;
-  max-width: 1728px;
+  width: 1728px;
   min-height: 477px;
   color: rgba(255, 255, 255, 1);
   display: flex;
@@ -26,11 +24,10 @@
 
 /* Тело основной инфы */
 .footer__container-main {
-  padding: 85px 75px 0px 84px;
   list-style: none;
-  max-width: 1569px;
-  max-height: 147px;
-  /* position: relative; */
+  width: 1569px;
+  height: 147px;
+  position: relative;
   top: 85px;
   left: 84px;
   display: flex;
@@ -40,10 +37,8 @@
 
 /* Левая часть */
 .footer__brand-wrapper {
-  min-width: 409px;
-  min-height: 87px;
-  top: 85px;
-  left: 84px;
+  width: 409px;
+  height: 87px;
   overflow-wrap: anywhere;
 }
 
@@ -53,7 +48,7 @@
   line-height: 154%;
   letter-spacing: 0;
   text-transform: capitalize;
-
+  padding-bottom: 16px;
 
 }
 
@@ -63,23 +58,20 @@ font-weight: 400;
   line-height: 154%;
   letter-spacing: 0;
   text-transform: capitalize;
+  padding-bottom: 43.9px;
 }
-
-.footer__ico {}
 
 .footer__ico-tg {
   width: 21px;
   height: 17.6px;
-  top: 214px;
-  left: 84px;
-
+  cursor: pointer;
 }
 
 .footer__ico-vk {
   width: 24px;
   height: 14px;
-  top: 215.98px;
-  left: 35.5px;
+  margin-left: 30.5px;
+  cursor: pointer;
 
 }
 
@@ -87,8 +79,6 @@ font-weight: 400;
 .footer__form-wrapper {
   width: 477px;
   height: 103px;
-  top: 85px;
-  left: 625px;
 }
 
 .footer__offer {      /* Подпишись на наши акции:*/
@@ -99,6 +89,7 @@ font-weight: 400;
   line-height: 100%;
   letter-spacing: 0;
   text-align: center;
+  padding-bottom: 13px;
 }
 
 .footer__input-container {
@@ -119,7 +110,7 @@ font-weight: 400;
   outline: none;
   transition: all 0.3s ease;
   flex-grow: 1;
-
+  font-family: inherit;
 
 }
 
@@ -131,6 +122,8 @@ font-weight: 400;
   line-height: 100%;
   letter-spacing: 0;
   color: rgba(0, 0, 0, 0.75);
+  font-family: inherit;
+  padding-left: 36px;
 }
 
 .footer__input:hover {
@@ -141,7 +134,6 @@ font-weight: 400;
 .footer__input-container:focus-within {
   background-color: #ffffff;
   border-color: #0066cc;
-  /* box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15);  */
 }
 
 .footer__button {
@@ -151,6 +143,7 @@ font-weight: 400;
   position: relative;
   padding: 0 15px 0 21px;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .footer__button::before {
@@ -206,7 +199,6 @@ font-weight: 400;
   transform: translateX(-50%);
   left: 50%;
   position: absolute;
-  /* top: 50%; */
   top: 6px;
   width: 66px;
   height: 1px;
