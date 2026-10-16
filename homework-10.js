@@ -21,13 +21,10 @@ const productCard = document.querySelector('.product-card')
 */
 
 let allProducts = productCards.reduce(function (acc, product) {
-  acc.push({
-    title: product.title,
-    description: product.description
-  });
-  return acc;
-}, []);
-console.log(allProducts);
+  acc[product.title] = product.description;
+  return acc
+}, {});
+console.log(allProducts)
 
 
 // Задача 5
