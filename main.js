@@ -1,8 +1,8 @@
-import  './script-sidepanel'
-import './script'
-import './homework-7';
-import './homework-8';
-import './homework-9';
-import './homework-10';
-import './homework-11';
-import './homework-12';
+import  './script-sidepanel.js';
+import './script.js';
+import './homework-7.js';
+import './homework-8.js';
+import './homework-9.js';
+import './homework-10.js';
+import './homework-11.js';
+import './homework-12.js';
