@@ -37,33 +37,3 @@ samsung.showInfo();
 const china = new PhonePackage('Xiaomi', '16 Ultra', 125000, 'кабель Type-C', 'зарядное устройство');
 china.included();
 china.showInfo();
-
-
-class Hi {
-  x = 10;
-  hello1() {
-    function hi() {   // через бинт как получить доступ к х
-      const x = 10;
-      console.log('hi', this);
-    }
-    hi();
-  }
-}
-
-const hi = new Hi()
-hi.hello1();
-
-// function hello() {
-//   const hi = () => {
-//     console.log(`hi, ${this}`);
-//   }
-//   hi()
-//   console.log(`Hello, ${this}`);
-// }
-
-// hello()
-
-// const hello1 = () => {
-//   console.log(`Hello, ${this}`);
-// }
-// hello1()
