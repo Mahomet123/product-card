@@ -18,15 +18,15 @@ class PhonePackage extends Phone {
   constructor(brand, name, price, cable, charger) {
     super(brand, name, price, cable);
     this.charger = charger;
-}
-included() {
-  console.log(`В комплект ${this.brand} всегда входит: ${this.charger} и ${this.cable}`);
-}
+  }
+  included() {
+    console.log(`В комплект ${this.brand} всегда входит: ${this.charger} и ${this.cable}`);
+  }
 
-showInfo() {
-  super.showInfo();
-  console.log(`В комплекте у ${this.brand} вы получите еще и ${this.charger}`);
-}
+  showInfo() {
+    super.showInfo();
+    console.log(`В комплекте у ${this.brand} вы получите еще и ${this.charger}`);
+  }
 }
 
 const iphone = new Phone('Apple', 'iPhone 17 Pro Max', 155000, 'кабель Type-C');
@@ -37,3 +37,33 @@ samsung.showInfo();
 const china = new PhonePackage('Xiaomi', '16 Ultra', 125000, 'кабель Type-C', 'зарядное устройство');
 china.included();
 china.showInfo();
+
+
+class Hi {
+  x = 10;
+  hello1() {
+    function hi() {   // через бинт как получить доступ к х
+      const x = 10;
+      console.log('hi', this);
+    }
+    hi();
+  }
+}
+
+const hi = new Hi()
+hi.hello1();
+
+// function hello() {
+//   const hi = () => {
+//     console.log(`hi, ${this}`);
+//   }
+//   hi()
+//   console.log(`Hello, ${this}`);
+// }
+
+// hello()
+
+// const hello1 = () => {
+//   console.log(`Hello, ${this}`);
+// }
+// hello1()

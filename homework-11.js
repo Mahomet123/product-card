@@ -35,50 +35,45 @@
 // Модальное окно находиться ровно по центру страницы, независимо от масштаба
 
 // Создать форму для регистрации внутри модального окна. Она должна содержать поля: имя, фамилия, дата рождения, логин, пароль, повторение пароля. Используйте для того, что бы указать пользователю, какое поле за что отвечает. Также важно использовать placeholder (обо всем этом можно будет почитать в документации в конце поста) Разрешается добавить поля на ваше усмотрение. Все поля должны иметь валидацию. Если пользователь ввел два разных пароля или форма невалидна (используем метод checkValidity()) - мы должны предупредить его о том, что регистрация отклонена. Если регистрация успешна - выводим значения формы в лог, как в задании №4. Дополнительно мы должны добавить к этому объекту свойство createdOn и указать туда время создания (используем сущность new Date()). Также создайте внешнюю переменную user и присвойте ей этот объект. После успешной регистрации - модалка должны закрыться.
-const emailForm = document.getElementById('subscribe-form');
-emailForm.addEventListener('submit', (event) => {
-  event.preventDefault()
-  const form = event.target;
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
 
-  if (form.checkValidity()) {
+import { Modal } from "./modal.js";
+import { Form } from "./form.js";
+//  По 12ДЗ переделали окрыти/закрытие модалки и слушатели на закрытие, перенесли логику в modal.js
+//  и сюда модалки перенесли импортировали класс Modal из файла modal.js, который отвечает за модалку
+const openModalBtn = document.getElementById('modal__btn-open');
+console.log(openModalBtn);
+const modal = new Modal('modal')
+openModalBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  modal.open();
+})
+
+
+const emailForm = new Form('subscribe-form');
+emailForm.form.addEventListener('submit', (event) => {
+  event.preventDefault()
+  const data = emailForm.getValues();
+  if (emailForm.isValid()) {
     console.log("Вы подписались на наши акции!");
     console.log(data);
   }
 })
 
 
-const modal = document.getElementById('modal');
-const openModalBtn = document.getElementById('modal__btn-open');
-const closeModalBtn = document.getElementById('close-modal');
-
-openModalBtn.addEventListener('click', (event) => {
-  event.preventDefault();     // отменяю действие перехода по сылке
-  modal.classList.add('modal-showed');     // добавляю класс
-});
-closeModalBtn.addEventListener('click', () => {
-  modal.classList.remove('modal-showed');     // удаляю добавленный класс при закрытии окна нажав Х в углу
-});
-
-console.log(openModalBtn);
-
-
 let user;
 
 // Форма регистрации в модальном окне
-const regForm = document.getElementById('register-form');
-regForm.addEventListener('submit', (event) => {
+const regForm = new Form('register-form')
+regForm.form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const form = event.target;
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());      //сохраняем введенные данные юзера
-  if (form.checkValidity() && password.value === passwordRepeat.value) {
+  const form = event.target;     //сохраняем введенные данные юзера
+  if (regForm.isValid() && password.value === passwordRepeat.value) {
     data.createdOn = new Date();     //добавляем дату регистрации
     user = data;      //сохраняем данные юзера во внешнюю "let user"
     console.log('Вы успешно зарегистрировались!')
     console.log(data);
-    modal.classList.remove('modal-showed');     // удаляю добавленный класс модалки, чтобы при успешном регистрации модалка закрывалась
+    modal.close();     // удаляю добавленный класс модалки, чтобы при успешном регистрации модалка закрывалась
+    regForm.reset();
   } else {
     form.reportValidity();
     console.log('Вы ввели неккоректные данные!')

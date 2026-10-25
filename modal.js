@@ -10,16 +10,24 @@
 Используя внутренние методы - мы можем управлять через айди модалки ее закрытием, открытием.
 */
 
-const modal = document.getElementById('modal');
-const openModalBtn = document.getElementById('modal__btn-open');
-const closeModalBtn = document.getElementById('close-modal');
-
-openModalBtn.addEventListener('click', (event) => {
-  event.preventDefault();     // отменяю действие перехода по сылке
-  modal.classList.add('modal-showed');     // добавляю класс
-});
-closeModalBtn.addEventListener('click', () => {
-  modal.classList.remove('modal-showed');     // удаляю добавленный класс при закрытии окна нажав Х в углу
-});
-
-console.log(openModalBtn);
+export class Modal {
+  constructor(modalId) {
+    this.modal = document.getElementById(modalId);
+    this.addCloseListener();
+  }
+  open() {
+    this.modal.classList.add('modal-showed');
+    console.log('open')
+  }
+  close() {
+    this.modal.classList.remove('modal-showed');
+  }
+  isOpen() {
+    return this.modal.classList.contains('modal-showed')
+  }
+  addCloseListener() {
+    this.modal.querySelector('.close-modal').addEventListener('click', () => {
+      this.close();
+    })
+  }
+}
