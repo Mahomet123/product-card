@@ -68,6 +68,7 @@ regForm.form.addEventListener('submit', (event) => {
   event.preventDefault();
   const form = event.target;     //сохраняем введенные данные юзера
   if (regForm.isValid() && password.value === passwordRepeat.value) {
+    const data = regForm.getValues();
     data.createdOn = new Date();     //добавляем дату регистрации
     user = data;      //сохраняем данные юзера во внешнюю "let user"
     console.log('Вы успешно зарегистрировались!')

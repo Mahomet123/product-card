@@ -15,8 +15,7 @@ export class Form {
   }
   getValues() {
     const formData = new FormData(this.form);
-    const data = Object.fromEntries(formData.entries());
-    return data;
+    return Object.fromEntries(formData.entries());
   }
 
   isValid() {
