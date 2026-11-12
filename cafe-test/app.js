@@ -1,90 +1,31 @@
-// Этот файл только подключает интерфейс к объектам из homework-13.js.
-// Классы и исходный файл домашнего задания не изменяются.
-(() => {
-  const $ = id => document.getElementById(id);
-  const buttons = document.querySelectorAll('[data-drink]');
-  let current = null;
-  let currentType = '';
-  let busy = false;
-  const colors = {coffee:'#9b633c',juice:'#ef9c24',tea:'#7eaa55'};
-  const names = {coffee:'Кофе',juice:'Сок',tea:'Чай'};
-  const originalLog = console.log;
-
-  function capture(action) {
-    console.log = (...args) => {
-      originalLog.apply(console,args);
-      const line = document.createElement('div');
-      line.textContent = args.map(String).join(' ');
-      $('log').appendChild(line);
-      $('log').scrollTop = $('log').scrollHeight;
-    };
-    try { action(); } finally { console.log = originalLog; }
-  }
-
-  // homework-13.js объявляет coffee, juice, tea и cafe.
-  // Их используем напрямую, без повторного создания напитков.
-  let drinks;
-  try {
-    drinks = { coffee, juice, tea };
-    if (!cafe || typeof cafe.orderDrink !== 'function') throw Error('Не найден объект cafe');
-  } catch (error) {
-    $('status').textContent = 'Помести homework-13.js рядом с index.html';
-    $('log').textContent = 'Не удалось подключить домашнее задание: ' + error.message;
-    buttons.forEach(b => b.disabled = true);
-    $('cafe-info').disabled = true;
-    return;
-  }
-
-  buttons.forEach(button => button.addEventListener('click', () => {
-    if (busy) return;
-    currentType = button.dataset.drink;
-    current = drinks[currentType];
-    buttons.forEach(b => b.classList.toggle('active', b === button));
-    $('selected').textContent = `${names[currentType]} · ${current.size} мл · ${current.price} ₽`;
-    $('temperature').disabled = false;
-    // showTemp() — метод из домашнего задания.
-    capture(() => { $('temperature').value = current.showTemp(); });
-    $('temperature-value').textContent = $('temperature').value;
-    ['apply','order','info'].forEach(id => $(id).disabled = false);
-    $('liquid').style.transition = 'none';
-    $('liquid').style.height = '0%';
-    $('status').textContent = 'Напиток выбран';
-  }));
-
-  $('temperature').addEventListener('input', () => {
-    $('temperature-value').textContent = $('temperature').value;
-  });
-  $('apply').addEventListener('click', () => {
-    if (!current || busy) return;
-    capture(() => {
-      current.setTemp(Number($('temperature').value));
-      current.showTemp();
-    });
-    $('status').textContent = 'Температура изменена';
-  });
-  $('info').addEventListener('click', () => {
-    if (current && !busy) capture(() => current.showInfo());
-  });
-  $('cafe-info').addEventListener('click', () => capture(() => cafe.showInfoCafe()));
-  $('order').addEventListener('click', async () => {
-    if (!current || busy) return;
-    busy = true;
-    $('order').disabled = true;
-    const orderedDrink = current;
-    const orderedType = currentType;
-    $('status').textContent = 'Готовим напиток...';
-    $('liquid').style.background = colors[orderedType];
-    $('liquid').style.transition = 'none';
-    $('liquid').style.height = '0%';
-    // Вызов настоящей логики заказа из домашнего задания.
-    capture(() => cafe.orderDrink(orderedDrink));
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      $('liquid').style.transition = 'height 2s ease';
-      $('liquid').style.height = '85%';
-    }));
-    await new Promise(resolve => setTimeout(resolve, 2050));
-    $('status').textContent = 'Напиток готов!';
-    busy = false;
-    $('order').disabled = false;
-  });
-})();
+// ВАЖНО: этот файл не меняет homework-13.js, а использует его классы и объекты.
+const $ = id => document.getElementById(id);
+const drinks = {
+ coffee:{name:'Чёрный кофе',detail:'Арабика, с молоком',price:150,temperature:90,color:'#8b5638'},
+ juice:{name:'Апельсиновый сок',detail:'Апельсин, без сахара',price:200,temperature:20,color:'#f3a126'},
+ tea:{name:'Зелёный чай',detail:'Мятный, с сахаром',price:50,temperature:85,color:'#75964b'}
+};
+let selected='coffee',busy=false,finishTimer=null;
+const machine=$('machine');
+function addLog(message){const line=document.createElement('div');line.className='entry';line.textContent=message;$('log').append(line);$('log').scrollTop=$('log').scrollHeight}
+function capture(fn){const original=console.log;console.log=(...args)=>{original.apply(console,args);addLog(args.map(x=>typeof x==='object'?JSON.stringify(x):String(x)).join(' '))};try{fn()}catch(err){addLog('Ошибка: '+err.message)}finally{console.log=original}}
+// Получаем именно объекты, которые созданы в homework-13.js.
+function getDrink(){return selected==='coffee'?coffee:selected==='juice'?juice:tea}
+function choose(key){if(busy)return;selected=key;const d=drinks[key];document.querySelectorAll('[data-drink]').forEach(b=>b.classList.toggle('selected',b.dataset.drink===key));$('drink-name').textContent=d.name;$('drink-price').textContent=d.price+' ₽';$('drink-details').textContent=d.detail;$('temperature').value=d.temperature;$('temp-value').textContent=d.temperature;machine.classList.remove('brewing','done');$('liquid').style.background=d.color;$('machine-stage').textContent='ГОТОВ К ЗАКАЗУ';$('machine-message').textContent='Выберите действие'}
+document.querySelectorAll('[data-drink]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.drink)));
+$('temperature').addEventListener('input',()=>{$('temp-value').textContent=$('temperature').value});
+$('set-temperature').addEventListener('click',()=>{const value=Number($('temperature').value);drinks[selected].temperature=value;capture(()=>{getDrink().setTemp(value);getDrink().showTemp()})});
+$('show-info').addEventListener('click',()=>capture(()=>getDrink().showInfo()));
+$('cafe-info').addEventListener('click',()=>capture(()=>cafe.showInfoCafe()));
+$('clear').addEventListener('click',()=>{$('log').replaceChildren()});
+$('order').addEventListener('click',()=>{
+ if(busy)return;busy=true;$('order').disabled=true;
+ machine.classList.remove('brewing','done');void machine.offsetWidth;
+ $('machine-stage').textContent='ПРИГОТОВЛЕНИЕ';$('machine-message').textContent='Наполняем стакан...';
+ capture(()=>cafe.orderDrink(getDrink()));
+ machine.classList.add('brewing');
+ clearTimeout(finishTimer);
+ finishTimer=setTimeout(()=>{machine.classList.remove('brewing');machine.classList.add('done');$('machine-stage').textContent='ГОТОВО';$('machine-message').textContent='Ваш напиток готов!';busy=false;$('order').disabled=false},2200);
+});
+try{if(typeof Drink!=='function'||typeof Coffee!=='function'||typeof Cafe!=='function')throw Error('Классы не найдены');$('connection').textContent='Подключён';addLog('Кафе готово. Выберите напиток.')}catch(error){$('connection').textContent='Ошибка подключения';addLog('Проверьте путь ../homework-13.js: '+error.message)}
+choose('coffee');

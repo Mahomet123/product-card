@@ -1,30 +1,7 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Кафе — тест домашнего задания</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<main>
-<h1>☕ Кафе «Камета»</h1>
-<p>Интерактивный тест твоего <code>homework-13.js</code></p>
-<section class="choices" aria-label="Напитки">
-<button data-drink="coffee">☕ Кофе <small>250 мл · 150 ₽</small></button>
-<button data-drink="juice">🍊 Сок <small>250 мл · 200 ₽</small></button>
-<button data-drink="tea">🍵 Чай <small>250 мл · 50 ₽</small></button>
-</section>
-<section class="controls">
-<h2 id="selected">Выбери напиток</h2>
-<label for="temperature">Температура: <strong id="temperature-value">—</strong> °C</label>
-<input type="range" id="temperature" min="0" max="100" value="50" disabled>
-<div class="actions"><button id="apply" disabled>Установить температуру</button><button id="order" disabled>Заказать напиток</button><button id="info" disabled>Информация о напитке</button><button id="cafe-info">Информация о кафе</button></div>
-</section>
-<section class="machine"><div class="nozzle"></div><div class="cup"><div id="liquid"></div></div><p id="status">Автомат ожидает заказ</p></section>
-<section><h2>Сообщения методов</h2><div id="log" role="log" aria-live="polite"></div></section>
-</main>
-<script src="../homework-13.js"></script>
-<script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Кафе Камета</title><link rel="stylesheet" href="style.css"></head><body>
+<main class="app"><header><div><span class="eyebrow">ИНТЕРАКТИВНАЯ ДЕМОНСТРАЦИЯ ООП</span><h1>☕ Кафе «Камета»</h1></div><span class="status-online">● СИСТЕМА ГОТОВА</span></header>
+<div class="layout"><section class="left"><div class="menu" aria-label="Выбор напитка"><button data-drink="coffee" class="selected">☕ <b>Кофе</b><small>150 ₽</small></button><button data-drink="juice">🍊 <b>Сок</b><small>200 ₽</small></button><button data-drink="tea">🍵 <b>Чай</b><small>50 ₽</small></button></div>
+<div class="controls"><div class="line"><strong id="drink-name">Чёрный кофе</strong><strong id="drink-price">150 ₽</strong></div><div class="subline">250 мл · <span id="drink-details">Арабика, с молоком</span></div><div class="line temp"><label for="temperature">Температура</label><strong><span id="temp-value">90</span> °C</strong></div><input id="temperature" type="range" min="0" max="100" value="90"><div class="buttons"><button id="set-temperature">Установить температуру</button><button class="accent" id="order">Приготовить напиток</button><button id="show-info">Информация о напитке</button><button id="cafe-info">Информация о кафе</button></div></div>
+<div class="machine" id="machine"><div class="machine-head"><span>КАМЕТА / DRINK STATION</span><span id="machine-stage">ГОТОВ К ЗАКАЗУ</span></div><div class="nozzle"></div><div class="pour" id="pour"></div><div class="steam steam1"></div><div class="steam steam2"></div><div class="cup"><div class="liquid" id="liquid"></div><div class="cup-label">КАМЕТА</div></div><div class="shelf"></div><div class="machine-bottom" id="machine-message">Выберите напиток и нажмите «Приготовить»</div></div></section>
+<section class="console"><div class="console-head"><div><span class="terminal-dot"></span><strong>Вывод программы</strong></div><button id="clear">Очистить</button></div><div class="console-content" id="log" aria-live="polite"></div><div class="console-foot">homework-13.js <span id="connection">Проверка подключения…</span></div></section></div></main>
+<script src="../homework-13.js"></script><script src="app.js"></script></body></html>
