@@ -1,11 +1,15 @@
 class Drink {
   #temperature;
-
+  
   constructor(name, size, temperature, price) {
     this.name = name;
     this.size = size;
     this.price = price;
     this.#temperature = temperature;
+
+    if(new.target === Drink) {
+      throw new Error('Нельзя создавать объект Drink напрямую')
+    }
   }
   //получить информацию про напиток
   showInfo(){
