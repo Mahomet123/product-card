@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кафе — тест домашнего задания</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>☕ Кафе «Камета»</h1>
+<p>Интерактивный тест твоего <code>homework-13.js</code></p>
+<section class="choices" aria-label="Напитки">
+<button data-drink="coffee">☕ Кофе <small>250 мл · 150 ₽</small></button>
+<button data-drink="juice">🍊 Сок <small>250 мл · 200 ₽</small></button>
+<button data-drink="tea">🍵 Чай <small>250 мл · 50 ₽</small></button>
+</section>
+<section class="controls">
+<h2 id="selected">Выбери напиток</h2>
+<label for="temperature">Температура: <strong id="temperature-value">—</strong> °C</label>
+<input type="range" id="temperature" min="0" max="100" value="50" disabled>
+<div class="actions"><button id="apply" disabled>Установить температуру</button><button id="order" disabled>Заказать напиток</button><button id="info" disabled>Информация о напитке</button><button id="cafe-info">Информация о кафе</button></div>
+</section>
+<section class="machine"><div class="nozzle"></div><div class="cup"><div id="liquid"></div></div><p id="status">Автомат ожидает заказ</p></section>
+<section><h2>Сообщения методов</h2><div id="log" role="log" aria-live="polite"></div></section>
+</main>
+<script src="../homework-13.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
