@@ -23,6 +23,6 @@ export class Form {
   }
 
   reset() {
-    this.form.modal.reset()
+    this.form.reset()
   }
 }
