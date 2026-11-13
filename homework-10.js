@@ -19,16 +19,22 @@ const productCard = document.querySelector('.product-card')
 /*Работа с данными (метод reduce):
 Используя метод массива .reduce(), получите новый объект (или массив), где ключом будет название продукта, а значением — его описание.
 */
-
+//  в задании написано: "получите новый объект (или массив)"
+//  поэтому сделал оба варианта, сначала получу объект
 let allProducts = productCards.reduce(function (acc, product) {
+  acc[product.title] = product.description;
+  return acc
+}, {});
+console.log(allProducts)
+
+//  а тут уже массив из объектов
+let allProducts2 = productCards.reduce(function (acc, product) {
   acc.push({
-    title: product.title,
-    description: product.description
+    [product.title]: product.description
   });
   return acc;
 }, []);
-console.log(allProducts);
-
+console.log(allProducts2);
 
 // Задача 5
 /*Интерактивность (со звёздочкой, повышенной сложности):
